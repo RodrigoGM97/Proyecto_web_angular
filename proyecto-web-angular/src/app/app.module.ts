@@ -10,6 +10,53 @@ import { ClienteGenReporteComponent } from './componentes/usuario/cliente-gen-re
 import { ClientePrincipalComponent } from './componentes/usuario/cliente-principal/cliente-principal.component';
 import { ClienteReportesComponent } from './componentes/usuario/cliente-reportes/cliente-reportes.component';
 
+//Importing Router Module
+import { Routes, RouterModule } from '@angular/router';
+
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { PrincipalComponent } from './componentes/principal/principal.component';
+
+
+
+const routes: Routes = [
+  {
+    path: '',
+    component: PrincipalComponent
+  },
+  {
+      path: 'admin-principal',
+      component: AdminPrincipalComponent
+  },
+  {
+    path: 'admin-reportes',
+    component: AdminReportesComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'org-principal',
+    component: OrgPrincipalComponent
+  },
+  {
+    path: 'cliente-gen-reporte',
+    component: ClienteGenReporteComponent
+  },
+  {
+    path: 'cliente-principal',
+    component: ClientePrincipalComponent
+  },
+  {
+    path: 'cliente-reportes',
+    component: ClienteReportesComponent
+  },
+  {
+    path: 'principal',
+    component: PrincipalComponent
+  }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,11 +66,15 @@ import { ClienteReportesComponent } from './componentes/usuario/cliente-reportes
     OrgPrincipalComponent,
     ClienteGenReporteComponent,
     ClientePrincipalComponent,
-    ClienteReportesComponent
+    ClienteReportesComponent,
+    PrincipalComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
+  exports:[RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
