@@ -1,3 +1,63 @@
-<p>
-  login works!
-</p>
+<!DOCTYPE html>
+<html class="h-100" lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <title>Login</title>
+</head>
+
+<body class="h-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img style="width:200px" src="../../../assets/img/Logo-CDMX.svg" alt="cdmx"></a>
+    </nav>
+    <div class="container-fluid full-minus-nav h-100 fixed-top">
+        <div class="row h-100 d-flex justify-content-center align-items-center">
+            <div class="col-sm-12 col-md-6 col-lg-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Inicio de Sesión</h3>
+                        <form>
+                            <div class="input-group form-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Usuario">
+                                
+                            </div>
+                            <div class="input-group form-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="Contraseña">
+                            </div>
+                            <div class="form-check mb-3">
+                                <input type="checkbox" class="form-check-input" id="remember_me">
+                                <label class="form-check-label" for="remember_me">Recordarme</label>
+                            </div>                            
+                            <div class="d-flex flex-row justify-content-center my-4">
+                                <button type="button" class="btn btn-primary"  onclick="location.href='administrador_principal.html'">Iniciar Sesión Administrador  </button>
+                            </div>
+                            <div class="d-flex flex-row justify-content-center my-4">
+                                <button type="button" class="btn btn-primary" onclick="location.href='organizacion_principal.html'">Iniciar Sesión Organización  </button>
+                            </div>
+                            <div class="d-flex flex-row justify-content-center my-4">
+                                <button type="button" class="btn btn-info"  onclick="location.href='principal.html'">Regresar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-center">
+                            <a href="#">¿Olvidaste tu contraseña?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./bundle.js"></script>
+</body>
+
+</html>

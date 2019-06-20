@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+        <title>Administrador Reportes</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img style="width:200px" src="../../../../assets/img/Logo-CDMX.svg" alt="cdmx"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="administrador_principal.html">Empleados <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="administrador_reportes.html">Reportes</a>
+                </li>
+            </ul>
+            <a class="pull-right" href="principal.html"><strong>Log Out </strong><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </nav>
+        <div class="container-fluid">
+            <div class = "page-header">
+               <h1>Reportes por día</h1>
+            </div>
+            <br>
+            <div class="module">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Fecha
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">11/06/19</a>
+                    <a class="dropdown-item" href="#">12/06/19</a>
+                    <a class="dropdown-item" href="#">13/06/19</a>
+                  </div>
+                </div>
+                <br>
+                <div class="table-responsive">
+                    <table class = "table">
+                    <tr>
+                        <th>ID del reporte</th>
+                        <th>Usuario que hizo el reporte</th>
+                        <th>Delegación</th>
+                        <th>Comentario</th>
+                        <th>Estado</th>
+                        <th> </th>
+                    </tr>
+                    <tr>
+                        <td>34861957</td>
+                        <td>José Ramirez Cruz</td> 
+                        <td>Álvaro Obregón</td> 
+                        <td>Se cayó un poste de luz</td>
+                        <td>
+                            <div class="col-sm col-lg bg-warning rounded">
+                                Reportado
+                            </div>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary btn-lg" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>26675657</td>
+                        <td>Rodrigo García Mayo</td> 
+                        <td>Benito Juárez</td> 
+                        <td>Se cayó un poste de luz</td>
+                        <td>
+                            <div class="col-sm col-lg bg-success rounded">
+                                Completado
+                            </div>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary btn-lg" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="./bundle.js"></script>
+    </body>
+</html>

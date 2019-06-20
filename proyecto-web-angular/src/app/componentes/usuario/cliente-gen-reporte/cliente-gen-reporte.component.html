@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Cliente Generar Reporte</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img style="width:200px" src="../../../../assets/img/Logo-CDMX.svg" alt="cdmx"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="principal.html">Principal<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cliente_principal.html">Areas afectadas<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cliente_reportes.html">Tus Reportes</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle  bg-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Generar reporte
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="cliente_generar_reporte.html">Agua</a>
+                            <a class="dropdown-item" href="cliente_generar_reporte.html">Luz</a>
+                        </div>
+                    </div>     
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+
+    <div class="d-flex flex-row pl-3">
+        <div class="dropdown pr-2">
+            <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Delegación
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Alvaro Obregón</a>
+                <a class="dropdown-item" href="#">Cuajimalpa</a>
+            </div>
+        </div>            
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Colonia
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Colonia A</a>
+                <a class="dropdown-item" href="#">Colonia B</a>
+            </div>
+        </div>            
+    </div>
+
+
+    <br>
+    
+    <div class="mx-3" style="height: 60vh; min-height: 100%">
+        <iframe 
+            src="https://maps.google.com/maps?q=cdmx&t=&z=11&ie=UTF8&iwloc=&output=embed" style="width: 100%; height:100%">
+        </iframe>        
+    </div>
+    <div class="text-center">
+        <form class="px-3">
+            <div class="form-group">
+                <h3 class="pt-3">Ingresa tu INE:</h3>           
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFileLang" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="customFileLang" data-browse="Examinar">Elegir archivo</label>
+                    </div>
+                </div>
+                <small>*Sera usada unicamente para identificar la persona que reporta el problema</small>
+                <br><h3 class="pt-3">Comentarios:</h3>
+                <input class="form-control" placeholder="Ingresa tu comentario">
+            </div>
+            <div>
+                <button type="button" id="myBtn" class="btn btn-primary btn-sx">Ingresar reporte</button>
+            </div>
+            <div class="toast">
+                <div class="toast-header">
+                  Reporte generado
+                </div>
+                <div class="toast-body">
+                  Puedes ver los reportes en la sección Tus Reportes
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        $(document).ready(function(){
+          $("#myBtn").click(function(){
+            $('.toast').toast('show');
+          });
+        });
+    </script>
+    <script src="./bundle.js"></script>
+</body>
+
+</html>

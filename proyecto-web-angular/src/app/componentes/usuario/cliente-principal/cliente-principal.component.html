@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Cliente Principal</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img style="width:200px" src="../../../../assets/img/Logo-CDMX.svg" alt="cdmx"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="principal.html">Principal<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="cliente_principal.html">Áreas afectadas<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cliente_reportes.html">Tus Reportes</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle bg-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Generar reporte
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="cliente_generar_reporte.html">Agua</a>
+                            <a class="dropdown-item" href="cliente_generar_reporte.html ">Luz</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <div class="pl-5">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Escoja mapa de área afectada
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Reportes de luz</a>
+                <a class="dropdown-item" href="#">Reportes de agua</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container-fluid">
+        <iframe 
+            src="https://maps.google.com/maps?q=cdmx&t=&z=11&ie=UTF8&iwloc=&output=embed" style="width:100%; height:500px">
+        </iframe>        
+    </div>
+
+    <script src="./bundle.js"></script>
+</body>
+
+</html>

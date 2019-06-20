@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+        <title>Administrador Organizaciones</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img style="width:200px" src="../../../../assets/img/Logo-CDMX.svg" alt="cdmx"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="administrador_principal.html">Empleados <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="administrador_reportes.html">Reportes</a>
+                </li>
+            </ul>
+            <a class="pull-right" href="principal.html"><strong>Log Out </strong><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </nav>
+        <div class="container-fluid">
+            <div class = "page-header">
+               <h1>
+                  Empleados por Organización
+               </h1>
+            </div>
+            <br>
+            <div class="module">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Organizaciones
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">CFE</a>
+                    <a class="dropdown-item" href="#">CNA</a>
+                  </div>
+                </div>
+                <br>
+                <div class="table-responsive">
+                    <table class = "table">
+                    <tr>
+                        <th>Nombre Completo del Empleado</th>
+                        <th>Usuario</th>
+                        <th> Foto del Empleado</th>
+                        <th> </th>
+                    </tr>
+                    <tr>
+                        <td>José Ramirez Cruz</td>
+                        <td>JoseRamirezC@CFE.com</td> 
+                        <td>
+                            <img src="../../../../assets/img/foto2.png" class="img-fluid img-thumbnail" alt="Foto">
+                        </td> 
+                        <td>
+                            <button type="button" class="btn btn-outline-primary btn-lg" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>Rodrigo García Mayo</td>
+                        <td>RodGarciaMayoC@CFE.com</td> 
+                        <td>
+                            <img src="../../../../assets/img/foto2.png" class="img-fluid img-thumbnail" alt="Foto">
+                        </td> 
+                        <td>
+                            <button type="button" class="btn btn-outline-primary btn-lg" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </td>
+                    </tr>
+                    </table>
+            </div>
+            </div>
+        </div>
+        <script src="./bundle.js"></script>
+    </body>
+</html>

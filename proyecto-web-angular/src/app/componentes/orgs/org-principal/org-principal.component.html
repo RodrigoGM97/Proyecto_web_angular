@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="h-100" lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <title>Organización</title>
+</head>
+
+<body class="h-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light nav-index-top">
+        <a class="navbar-brand" href="#"><img style="width:200px" src="../../../../assets/img/Logo-CDMX.svg" alt="cdmx"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="organizacion_principal.html">Reportes</a>
+                </li>
+            </ul>
+            <a class="pull-right" href="principal.html"><strong>Log Out </strong><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </nav>
+
+    <div class="full-minus-nav fixed-top h-100 d-flex justify-content-center z-index-1">
+        <div class="container h-100 pt-lg-3 pt-md-3 pt-2 m-0 overflow-scroll-x">
+                <h1 class="mb-lg-4 mb-md-4 mb-2">Incidentes Reportados</h1>
+                <div class="row height-85">
+                    <div class="col-12 col-md-6 col-lg-6 mb-3 map-height-responsive">
+                        <iframe src="https://maps.google.com/maps?q=cdmx&t=&z=11&ie=UTF8&iwloc=&output=embed" class="full"></iframe>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <form class="d-flex flex-row">
+                            <div class="dropdown mb-lg-4 mb-md-4 mb-2 mr-2">
+                                <button class="btn btn-secondary dropdown-toggle bg-success button-text" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Delegación
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <a class="dropdown-item" href="#">Álvaro Obregón</a>
+                                    <a class="dropdown-item" href="#">Benito Juárez</a>
+                                    <a class="dropdown-item" href="#">Cuauhtémoc</a>
+                                </div>
+                            </div>
+                            <div class="dropdown mb-lg-4 mb-md-4 mb-2 mr-2">
+                                <button class="btn btn-secondary dropdown-toggle bg-success button-text" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Colonia
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" href="#">Tlacopac</a>
+                                    <a class="dropdown-item" href="#">Narvarte</a>
+                                    <a class="dropdown-item" href="#">Centro</a>
+                                </div>
+                            </div>
+                        </form>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID del Reporte</th>
+                                    <th scope="col">Comentario</th>
+                                    <th scope="col">Estado</th>
+                                </tr>
+                                <tr>
+                                    <td>34861957</td>
+                                    <td>Se cayó un poste de luz</td>
+                                    <td>
+                                        <div class="col-sm col-lg bg-warning rounded report-warning-color">
+                                            <p>Reportado</p>
+                                            <div class="d-flex flex-row">
+                                                <button type="button" class="btn btn-danger mr-1 check-cross-btn"><i class="fas fa-times"></i></button>
+                                                <button type="button" class="btn btn-success check-cross-btn"><i class="fas fa-check"></i></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>26675657</td>
+                                    <td>Hubo tormenta eléctrica</td>
+                                    <td>
+                                        <div class="col-sm col-lg bg-success rounded report-warning-color">
+                                            Completado
+                                        </div>
+                                    </td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <script src="./bundle.js"></script>
+</body>
+
+</html>

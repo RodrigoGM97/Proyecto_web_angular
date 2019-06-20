@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Cliente Reportes</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img style="width:200px" src="../../../../assets/img/Logo-CDMX.svg" alt="cdmx"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="principal.html">Principal<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cliente_principal.html">Areas afectadas<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="cliente_reportes.html">Tus Reportes</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle bg-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Generar reporte
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="cliente_generar_reporte.html">Agua</a>
+                            <a class="dropdown-item" href="cliente_generar_reporte.html">Luz</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+
+    <div class="container-fluid">
+            <div class = "page-header">
+               <h1>Reportes por día</h1>
+            </div>
+            <br>
+            <div class="module">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Fecha
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">11/06/19</a>
+                    <a class="dropdown-item" href="#">12/06/19</a>
+                    <a class="dropdown-item" href="#">13/06/19</a>
+                  </div>
+                </div>
+                <br>
+                <div class="table-responsive">
+                    <table class = "table">
+                    <tr>
+                        <th>ID del reporte</th>
+                        <th>Delegación</th>
+                        <th>Tipo de reporte</th>
+                        <th>Comentario</th>
+                        <th>Estado</th>
+                    </tr>
+                    <tr>
+                        <td>34861957</td>
+                        <td>Álvaro Obregón</td> 
+                        <td>Luz</td>
+                        <td>Se cayó un poste de luz</td>
+                        <td>
+                            <div class="col-sm col-lg bg-warning rounded">
+                                Reportado
+                            </div>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>26675657</td>
+                        <td>Álvaro Obregón</td>
+                        <td>Luz</td>
+                        <td>Hubo tormenta eléctrica</td>
+                        <td>
+                            <div class="col-sm col-lg bg-success rounded">
+                                Completado
+                            </div>
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    <script src="./bundle.js"></script>
+</body>
+
+</html>
