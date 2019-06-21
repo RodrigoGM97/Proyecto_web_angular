@@ -13,6 +13,8 @@ import { ClienteReportesComponent } from './componentes/usuario/cliente-reportes
 //Importing Router Module
 import { Routes, RouterModule } from '@angular/router';
 
+import { ChartsModule } from 'ng2-charts';
+
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -73,6 +75,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    ChartsModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
     BsDropdownModule.forRoot()
