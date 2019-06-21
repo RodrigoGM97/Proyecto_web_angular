@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -10,6 +11,7 @@ import { OrgPrincipalComponent } from './componentes/orgs/org-principal/org-prin
 import { ClienteGenReporteComponent } from './componentes/usuario/cliente-gen-reporte/cliente-gen-reporte.component';
 import { ClientePrincipalComponent } from './componentes/usuario/cliente-principal/cliente-principal.component';
 import { ClienteReportesComponent } from './componentes/usuario/cliente-reportes/cliente-reportes.component';
+import { ToastrModule } from 'ngx-toastr';
 
 //Importing Router Module
 import { Routes, RouterModule } from '@angular/router';
@@ -81,7 +83,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     ChartsModule,
+    BrowserAnimationsModule,
     FormsModule,
+    ToastrModule.forRoot(),
     RouterModule.forRoot(routes),
     HttpClientModule,
     BsDropdownModule.forRoot()

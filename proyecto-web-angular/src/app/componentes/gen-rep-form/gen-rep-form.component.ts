@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Reporte } from '../../clases/reporte';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-gen-rep-form',
@@ -12,7 +13,7 @@ export class GenRepFormComponent implements OnInit {
   delegaciones = ["Alvaro Obregón", "Cuajimalpa"];
   colonias = ["Colonia A", "Colonia B"]
   
-  constructor() {
+  constructor(private toastrService:ToastrService) {
     this.reporte = new Reporte();
    }
 
@@ -20,7 +21,7 @@ export class GenRepFormComponent implements OnInit {
   }
 
   btnClick() {
-    console.log("Hola");
+    this.toastrService.success("¡Reporte Generado!", "Estado de reporte:");
   }
 
 }
