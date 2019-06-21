@@ -13,6 +13,8 @@ export class GenRepFormComponent implements OnInit {
   delegaciones = ["Alvaro Obregón", "Cuajimalpa"];
   colonias = ["Colonia A", "Colonia B"]
   
+  
+  
   constructor(private toastrService:ToastrService) {
     this.reporte = new Reporte();
    }
@@ -23,5 +25,6 @@ export class GenRepFormComponent implements OnInit {
   btnClick() {
     this.toastrService.success("¡Reporte Generado!", "Estado de reporte:");
   }
+
 
 }
