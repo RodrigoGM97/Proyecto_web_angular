@@ -1,5 +1,5 @@
 import { Component, OnInit, Input,Output,EventEmitter} from '@angular/core';
-import { IncidentesReportadosService } from "../../../services/incidentes-reportados.service";
+import { IncidentesReportadosService } from "../../../services/incidentes-reportados/incidentes-reportados.service";
 
 @Component({
   selector: 'app-org-principal',
