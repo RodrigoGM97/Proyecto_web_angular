@@ -1,3 +1,11 @@
 <td scope="row">{{incidente.id}}</td>
 <td >{{incidente.comentario}}</td>
-<td >{{incidente.estado}}</td>
+<td >
+  <div class="col-sm col-lg rounded report-warning-color" [class.bg-gainsboro]="incidente.estado == 'reportado'" [class.bg-success]="incidente.estado == 'realizado'" [class.bg.danger]="incidente.estado == 'rechazado'">
+      <p class="text-center">{{incidente.estado}}</p>
+      <div class="d-flex flex-row justify-content-center">
+          <button type="button" class="btn btn-danger mr-1 check-cross-btn"><i class="fas fa-times"></i></button>
+          <button type="button" class="btn btn-success check-cross-btn"><i class="fas fa-check"></i></button>
+      </div>
+  </div>
+</td>
