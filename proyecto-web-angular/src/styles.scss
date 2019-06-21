@@ -36,6 +36,10 @@
     overflow-x: scroll;
 }
 
+.bg-gainsboro {
+    background-color: gainsboro;
+}
+
 @mixin small {
     @media(max-width:767px) {
         @content;
