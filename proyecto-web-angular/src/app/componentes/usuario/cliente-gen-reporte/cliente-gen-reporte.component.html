@@ -85,42 +85,10 @@
             src="https://maps.google.com/maps?q=cdmx&t=&z=11&ie=UTF8&iwloc=&output=embed" style="width: 100%; height:100%">
         </iframe>        
     </div>
-    <div class="text-center">
-        <form class="px-3">
-            <div class="form-group">
-                <h3 class="pt-3">Ingresa tu INE:</h3>           
-                <div class="input-group">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFileLang" aria-describedby="inputGroupFileAddon01">
-                        <label class="custom-file-label" for="customFileLang" data-browse="Examinar">Elegir archivo</label>
-                    </div>
-                </div>
-                <small>*Sera usada unicamente para identificar la persona que reporta el problema</small>
-                <br><h3 class="pt-3">Comentarios:</h3>
-                <input class="form-control" placeholder="Ingresa tu comentario">
-            </div>
-            <div>
-                <button type="button" id="myBtn" class="btn btn-primary btn-sx">Ingresar reporte</button>
-            </div>
-            <div class="toast">
-                <div class="toast-header">
-                  Reporte generado
-                </div>
-                <div class="toast-body">
-                  Puedes ver los reportes en la sección Tus Reportes
-                </div>
-            </div>
-        </form>
-    </div>
+    <br>
     <app-gen-rep-form></app-gen-rep-form>
 
-    <script>
-        $(document).ready(function(){
-          $("#myBtn").click(function(){
-            $('.toast').toast('show');
-          });
-        });
-    </script>
+    
     <script src="./bundle.js"></script>
 </body>
 

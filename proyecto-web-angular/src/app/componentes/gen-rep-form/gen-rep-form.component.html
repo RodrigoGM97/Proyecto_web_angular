@@ -1,14 +1,75 @@
 <!--h1>-{{aJson}}-</h1-->
-<form #formulario="ngForm">
-    <div class="form-group">
-      <label for="ine">ine</label>
-      <input type="input" class="form-control" id="ine" placeholder="A00XXXXX" [(ngModel)]="reporte.ine" name="ine">
+
+<form #formulario="ngForm" class="container-fluid">
+  <div class="container-fluid row">
+    <div class="form-group col-sm-6">
+      <h3>Fecha</h3>
+      <input type="date" class="form-control" id="fecha" placeholder="#" [(ngModel)]="reporte.fecha" name="fecha">
     </div>
+    <div class="form-group col-sm-6 pl-2">
+        <h3>Ingresa tu INE:</h3>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile" name="filename" [(ngModel)]="reporte.ine">
+            <label class="custom-file-label" for="customFile" data-browse="Examinar">Choose file</label>
+          </div>
+    </div>
+  </div>
+
+  <div class="container-fluid row">  
+    <div class="form-group col-sm-6">
+      <h3>Calle</h3>
+      <input type="input" class="form-control" id="calle" placeholder="Calle" [(ngModel)]="reporte.calle" name="calle">
+    </div>
+    <div class="form-group pl-2 col-sm-6">
+      <h3>Número</h3>
+      <input type="input" class="form-control" id="numero" placeholder="#" [(ngModel)]="reporte.numero" name="numero">
+    </div>
+  </div>
+  
+  <div class="container-fluid row">
+    <div class="form-group col-sm-6">
+      <h3>Delegación</h3>
+      <select class="form-control" id="delegacion" [(ngModel)]="reporte.delegacion" name="delegacion">
+        <option></option>
+        
+          <option *ngFor="let del of delegaciones" [value]="del">{{del}}</option>
     
+      </select>
+    </div>
+    <div class="form-group pl-2 col-sm-6">
+      <h3>Colonia</h3>
+      <select class="form-control" id="colonia" [(ngModel)]="reporte.colonia" name="colonia">
+        <option></option>
+        
+          <option *ngFor="let col of colonias" [value]="col">{{col}}</option>
+    
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group container-fluid col-sm-12 pr-5">
+    <h3>Comentario</h3>
+    <input type="input" class="form-control" id="comentario" placeholder="Ingresa tu comentario" [(ngModel)]="reporte.comentario" name="comentario">
+  </div>
+  <br>
+  <div class="text-center">
+      <button type="button" id="myBtn" class="btn btn-primary btn-sx" (click)="btnClick();">Ingresar reporte</button>
+  </div>
+  <div class="toast">
+      <div class="toast-header">
+        Reporte generado
+      </div>
+      <div class="toast-body">
+        Puedes ver los reportes en la sección Tus Reportes
+      </div>
+  </div>
+
+
   
   </form>
 
-  <p>{{reporte.ine}}</p>
+
+  
   
   
   

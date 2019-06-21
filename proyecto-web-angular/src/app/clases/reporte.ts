@@ -1,4 +1,7 @@
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 export class Reporte {
+    
     constructor (
         public ine?:string,
         public comentario?:string,
@@ -9,6 +12,6 @@ export class Reporte {
         public fecha?:string
     )
     {
-
+        
     }
 }
