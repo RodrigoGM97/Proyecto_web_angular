@@ -28,16 +28,19 @@
                 <li class="nav-item">
                     <a class="nav-link" href="cliente-reportes">Tus Reportes</a>
                 </li>
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <button class="btn dropdown-toggle  bg-success" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Generar reporte
+                <li>
+                    <div class="btn-group" dropdown>
+                        <button id="button-basic" dropdownToggle type="button" class="btn bg-success dropdown-toggle"
+                                aria-controls="dropdown-basic">
+                          Generar Reporte<span class="caret"></span>
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="cliente-gen-reporte">Agua</a>
-                            <a class="dropdown-item" href="cliente-gen-reporte">Luz</a>
-                        </div>
-                    </div>     
+                        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                            role="menu" aria-labelledby="button-basic">
+                          <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">Agua</a></li>
+                          <li class="divider dropdown-divider"></li>
+                          <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">Luz</a></li>
+                        </ul>
+                      </div>
                 </li>
             </ul>
         </div>
@@ -46,23 +49,31 @@
 
     <div class="d-flex flex-row pl-3">
         <div class="dropdown pr-2">
-            <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Delegación
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Alvaro Obregón</a>
-                <a class="dropdown-item" href="#">Cuajimalpa</a>
+            <div class="btn-group" dropdown>
+                <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary bg-success dropdown-toggle"
+                        aria-controls="dropdown-basic">
+                  Delegación<span class="caret"></span>
+                </button>
+                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                    role="menu" aria-labelledby="button-basic">
+                  <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">Alvaro Obregón</a></li>
+                  <li class="divider dropdown-divider"></li>
+                  <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">Cuajimalpa</a></li>
+                </ul>
             </div>
         </div>            
 
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Colonia
+        <div class="btn-group" dropdown>
+            <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary bg-success dropdown-toggle"
+                    aria-controls="dropdown-basic">
+              Colonia<span class="caret"></span>
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Colonia A</a>
-                <a class="dropdown-item" href="#">Colonia B</a>
-            </div>
+            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                role="menu" aria-labelledby="button-basic">
+              <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">Colonia A</a></li>
+              <li class="divider dropdown-divider"></li>
+              <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">Colonia B</a></li>
+            </ul>
         </div>            
     </div>
 
