@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -20,6 +21,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { IncidenteRowComponent } from './componentes/orgs/org-principal/incidente-row/incidente-row.component';
+import { GenRepFormComponent } from './componentes/gen-rep-form/gen-rep-form.component'; 
 
 
 
@@ -73,11 +75,13 @@ const routes: Routes = [
     ClientePrincipalComponent,
     ClienteReportesComponent,
     PrincipalComponent,
-    IncidenteRowComponent
+    IncidenteRowComponent,
+    GenRepFormComponent
   ],
   imports: [
     BrowserModule,
     ChartsModule,
+    FormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
     BsDropdownModule.forRoot()

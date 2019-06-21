@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Reporte } from '../../clases/reporte';
 
 @Component({
   selector: 'app-gen-rep-form',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gen-rep-form.component.scss']
 })
 export class GenRepFormComponent implements OnInit {
+  reporte:Reporte;
 
-  constructor() { }
+  
+  constructor() {
+    this.reporte = new Reporte();
+   }
 
   ngOnInit() {
   }
