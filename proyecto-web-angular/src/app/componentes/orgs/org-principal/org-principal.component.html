@@ -87,6 +87,17 @@
                                 </tr>
                             </thead>
                         </table>
+
+                        <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th >ID</th>
+                                    <th >Comentario</th>
+                                    <th >Estado</th>
+                                  </tr>
+                                </thead>
+                                  <tr *ngFor="let incidente of incidentes" app-incidente-row [incidente]="incidente" ></tr>
+                         </table>
                     </div>
                 </div>
         </div>

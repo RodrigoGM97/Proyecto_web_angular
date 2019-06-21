@@ -19,6 +19,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PrincipalComponent } from './componentes/principal/principal.component';
+import { IncidenteRowComponent } from './componentes/orgs/org-principal/incidente-row/incidente-row.component';
 
 
 
@@ -71,7 +72,8 @@ const routes: Routes = [
     ClienteGenReporteComponent,
     ClientePrincipalComponent,
     ClienteReportesComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    IncidenteRowComponent
   ],
   imports: [
     BrowserModule,

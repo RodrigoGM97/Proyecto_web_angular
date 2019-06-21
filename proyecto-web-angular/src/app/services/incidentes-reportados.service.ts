@@ -6,22 +6,29 @@ import { Injectable } from '@angular/core';
 export class IncidentesReportadosService {
 
   constructor() { }
-  return;
-  /*getIncidentes() {
+  
+  getIncidentes() {
     return [
       {
-        id:"34861957"
-
+        id:"34861957",
+        comentario:"Se cayó un poste de luz",
+        estado: "reportado"
       },
       {
-
+        id:"26675657",
+        comentario:"Se cayó un poste de luz",
+        estado: "completado"
       },
       {
-
+        id:"12673387",
+        comentario:"Se cayó un poste de luz",
+        estado: "rechazado"
       },
       {
-
+        id:"26627349",
+        comentario:"Se cayó un poste de luz",
+        estado: "reportado"
       }
-    ]
-  }*/
+    ];
+  }
 }
