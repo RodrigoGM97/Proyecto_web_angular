@@ -10,11 +10,10 @@ import { Color, BaseChartDirective, Label } from 'ng2-charts';
 })
 export class ClientePrincipalComponent implements OnInit {
   public lineChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' },
-    { data: [180, 480, 770, 90, 1000, 270, 400], label: 'Series C', yAxisID: 'y-axis-1' }
+    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Reportes de Agua' },
+    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Reportes de Luz' }
   ];
-  public lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public lineChartLabels: Label[] = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'July'];
   public lineChartOptions: (ChartOptions & { annotation: any }) = {
     responsive: true,
     scales: {
@@ -32,7 +31,7 @@ export class ClientePrincipalComponent implements OnInit {
             color: 'rgba(255,0,0,0.3)',
           },
           ticks: {
-            fontColor: 'red',
+            fontColor: 'white',
           }
         }
       ]
@@ -58,27 +57,19 @@ export class ClientePrincipalComponent implements OnInit {
   public lineChartColors: Color[] = [
     { // grey
       backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
+      borderColor: 'blue',
       pointBackgroundColor: 'rgba(148,159,177,1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     },
     { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
+      backgroundColor: 'rgba(237, 113, 113,0.2)',
+      borderColor: 'red',
       pointBackgroundColor: 'rgba(77,83,96,1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(77,83,96,1)'
-    },
-    { // red
-      backgroundColor: 'rgba(255,0,0,0.3)',
-      borderColor: 'red',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     }
   ];
   public lineChartLegend = true;
@@ -94,7 +85,7 @@ export class ClientePrincipalComponent implements OnInit {
 
   public randomize(): void {
     for (let i = 0; i < this.lineChartData.length; i++) {
-      for (let j = 0; j < this.lineChartData[i].data.length; j++) {
+      for (let j = 1; j < this.lineChartData[i].data.length; j++) {
         this.lineChartData[i].data[j] = this.generateNumber(i);
       }
     }
@@ -129,8 +120,8 @@ export class ClientePrincipalComponent implements OnInit {
   }
 
   public changeColor() {
-    this.lineChartColors[2].borderColor = 'green';
-    this.lineChartColors[2].backgroundColor = `rgba(0, 255, 0, 0.3)`;
+    this.lineChartColors[1].borderColor = 'green';
+    this.lineChartColors[1].backgroundColor = `rgba(0, 255, 0, 0.3)`;
   }
 
   public changeLabel() {
