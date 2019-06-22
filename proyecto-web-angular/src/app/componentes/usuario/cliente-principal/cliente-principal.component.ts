@@ -9,6 +9,11 @@ import { Color, BaseChartDirective, Label } from 'ng2-charts';
   styleUrls: ['./cliente-principal.component.scss']
 })
 export class ClientePrincipalComponent implements OnInit {
+  show:boolean = false;
+  toggleCollapse() {
+    this.show = !this.show
+  }
+  
   public lineChartData: ChartDataSets[] = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Reportes de Agua' },
     { data: [28, 48, 40, 19, 86, 27, 90], label: 'Reportes de Luz' }
