@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalComponent implements OnInit {
 
+  show:boolean = false;
+  toggleCollapse() {
+    this.show = !this.show
+  }
+
   constructor() { }
 
   ngOnInit() {

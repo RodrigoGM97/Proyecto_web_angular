@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminReportesComponent implements OnInit {
 
+  show:boolean = false;
+  toggleCollapse() {
+    this.show = !this.show
+  }
+
   constructor() { }
 
   ngOnInit() {

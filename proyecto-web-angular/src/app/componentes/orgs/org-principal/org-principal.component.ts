@@ -11,6 +11,11 @@ export class OrgPrincipalComponent implements OnInit {
 
   incidentes;
 
+  show:boolean = false;
+  toggleCollapse() {
+    this.show = !this.show
+  }
+
   //@Output() clicked=new EventEmitter<string>(); 
 
   constructor(incidentesReportadosService: IncidentesReportadosService) { 
