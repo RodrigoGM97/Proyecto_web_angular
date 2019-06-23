@@ -41,6 +41,10 @@
     background-color: gainsboro;
 }
 
+.color-white {
+    color: white;
+}
+
 @mixin small {
     @media(max-width:767px) {
         @content;
