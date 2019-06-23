@@ -16,17 +16,17 @@ export class IncidentesReportadosService {
       },
       {
         id:"26675657",
-        comentario:"Se cayó un poste de luz",
+        comentario:"Se quemó un transformador",
         estado: "completado"
       },
       {
         id:"12673387",
-        comentario:"Se cayó un poste de luz",
+        comentario:"Hay un cable caído",
         estado: "rechazado"
       },
       {
         id:"26627349",
-        comentario:"Se cayó un poste de luz",
+        comentario:"Cayó un rayo en un poste",
         estado: "reportado"
       }
     ];
