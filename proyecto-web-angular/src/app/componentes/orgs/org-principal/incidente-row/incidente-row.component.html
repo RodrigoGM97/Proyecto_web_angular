@@ -4,8 +4,8 @@
   <div class="col-sm col-lg rounded report-warning-color" [class.bg-gainsboro]="incidente.estado == 'reportado'" [class.bg-success]="incidente.estado == 'completado'" [class.bg-danger]="incidente.estado == 'rechazado'">
       <p class="text-center" [class.color-white]="incidente.estado == 'completado' || incidente.estado == 'rechazado'">{{incidente.estado}}</p>
       <div class="flex-row justify-content-center" [class.d-flex]="incidente.estado == 'reportado'" [class.d-none]="incidente.estado == 'rechazado' || incidente.estado == 'completado'">
-          <button type="button" class="btn btn-danger mr-1 check-cross-btn"><i class="fas fa-times"></i></button>
-          <button type="button" class="btn btn-success check-cross-btn"><i class="fas fa-check"></i></button>
+          <button type="button" class="btn btn-danger mr-1 check-cross-btn" (click)="incidenteRechazado()"><i class="fas fa-times"></i></button>
+          <button type="button" class="btn btn-success check-cross-btn" (click)="incidenteCompletado()"><i class="fas fa-check"></i></button>
       </div>
   </div>
 </td>
