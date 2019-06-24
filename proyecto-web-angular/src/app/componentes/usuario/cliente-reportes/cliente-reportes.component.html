@@ -63,38 +63,20 @@
                 </div>
                 <br>
                 <div class="table-responsive">
-                    <table class = "table">
-                    <tr>
-                        <th>ID del reporte</th>
-                        <th>Delegación</th>
-                        <th>Tipo de reporte</th>
-                        <th>Comentario</th>
-                        <th>Estado</th>
-                    </tr>
-                    <tr>
-                        <td>34861957</td>
-                        <td>Álvaro Obregón</td> 
-                        <td>Luz</td>
-                        <td>Se cayó un poste de luz</td>
-                        <td>
-                            <div class="col-sm col-lg bg-warning rounded">
-                                Reportado
-                            </div>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td>26675657</td>
-                        <td>Álvaro Obregón</td>
-                        <td>Luz</td>
-                        <td>Hubo tormenta eléctrica</td>
-                        <td>
-                            <div class="col-sm col-lg bg-success rounded">
-                                Completado
-                            </div>
-                        </td>
-                    </tr>
-                    </table>
-                </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID del reporte</th>
+                                    <th>Delegación</th>
+                                    <th>Colonia</th>
+                                    <th>Tipo de Reporte</th>
+                                    <th>Comentario</th>
+                                    <th>Estado</th>
+                              </tr>
+                            </thead>
+                                <tr *ngFor="let incidente of incidentes" app-reportes-row-user [incidente]="incidente" ></tr>
+                        </table>
+                    </div>
             </div>
         </div>
     <script src="./bundle.js"></script>

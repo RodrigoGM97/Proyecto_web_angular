@@ -28,7 +28,7 @@ import { LoginFormComponent } from './componentes/login-form/login-form.componen
 import { CarouselComponent } from './componentes/carousel/carousel.component';
 import { EmpleadosRowComponent } from './componentes/admin/admin-principal/empleados-row/empleados-row.component';
 import { ReportesRowComponent } from './componentes/admin/admin-reportes/reportes-row/reportes-row.component';
-
+import { ReportesRowUserComponent } from './componentes/usuario/cliente-reportes/reportes-row-user/reportes-row-user.component'
 
 
 const routes: Routes = [
@@ -86,7 +86,8 @@ const routes: Routes = [
     LoginFormComponent,
     CarouselComponent,
     EmpleadosRowComponent,
-    ReportesRowComponent
+    ReportesRowComponent,
+    ReportesRowUserComponent
   ],
   imports: [
     BrowserModule,
