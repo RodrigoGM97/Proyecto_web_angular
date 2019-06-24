@@ -35,26 +35,30 @@
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
                         <form class="d-flex flex-row">
-                            <div class="dropdown mb-lg-4 mb-md-4 mb-2 mr-2">
-                                <button class="btn btn-secondary dropdown-toggle bg-success button-text" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Delegación
+                            <div class="btn-group mb-lg-4 mb-md-4 mb-2 mr-2" dropdown>
+                                <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle bg-success"
+                                            aria-controls="dropdown-basic">
+                                    Delegación <span class="caret"></span>
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <a class="dropdown-item" href="#">Álvaro Obregón</a>
-                                    <a class="dropdown-item" href="#">Benito Juárez</a>
-                                    <a class="dropdown-item" href="#">Cuauhtémoc</a>
-                                </div>
+                                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                                    role="menu" aria-labelledby="button-basic">
+                                    <li role="menuitem"><a class="dropdown-item" href="#">Álvaro Obregón</a></li>
+                                    <li role="menuitem"><a class="dropdown-item" href="#">Benito Juárez</a></li>
+                                    <li role="menuitem"><a class="dropdown-item" href="#">Cuauhtémoc</a></li>
+                                </ul>
                             </div>
-                            <div class="dropdown mb-lg-4 mb-md-4 mb-2 mr-2">
-                                <button class="btn btn-secondary dropdown-toggle bg-success button-text" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Colonia
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                    <a class="dropdown-item" href="#">Tlacopac</a>
-                                    <a class="dropdown-item" href="#">Narvarte</a>
-                                    <a class="dropdown-item" href="#">Centro</a>
+                            <div class="btn-group mb-lg-4 mb-md-4 mb-2 mr-2" dropdown>
+                                    <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle bg-success"
+                                                aria-controls="dropdown-basic">
+                                        Colonia <span class="caret"></span>
+                                    </button>
+                                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                                        role="menu" aria-labelledby="button-basic">
+                                        <li role="menuitem"><a class="dropdown-item" href="#">Tlacopac</a></li>
+                                        <li role="menuitem"><a class="dropdown-item" href="#">Narvarte</a></li>
+                                        <li role="menuitem"><a class="dropdown-item" href="#">Centro</a></li>
+                                    </ul>
                                 </div>
-                            </div>
                         </form>
                         <table class="table">
                                 <thead>
