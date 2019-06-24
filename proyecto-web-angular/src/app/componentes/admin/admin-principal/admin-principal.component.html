@@ -48,41 +48,31 @@
                 <br>
                 <br>
                 <div class="table-responsive">
-                    <table class = "table">
-                    <tr>
-                        <th>Nombre Completo del Empleado</th>
-                        <th>Usuario</th>
-                        <th> Foto del Empleado</th>
-                        <th> </th>
-                    </tr>
-                    <tr>
-                        <td>José Ramirez Cruz</td>
-                        <td>JoseRamirezC@CFE.com</td> 
-                        <td>
-                            <img src="../../../../assets/img/foto2.png" class="img-fluid img-thumbnail" alt="Foto">
-                        </td> 
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-lg" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td>Rodrigo García Mayo</td>
-                        <td>RodGarciaMayoC@CFE.com</td> 
-                        <td>
-                            <img src="../../../../assets/img/foto2.png" class="img-fluid img-thumbnail" alt="Foto">
-                        </td> 
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-lg" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </td>
-                    </tr>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th >Nombre Completo del Empleado</th>
+                                <th >Usuario</th>
+                                <th >Foto</th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                            <tr *ngFor="let empleado of empleados" app-empleados-row [empleado]="empleado" ></tr>
                     </table>
             </div>
             </div>
         </div>
         <script src="./bundle.js"></script>
+        <!--<table class="table">
+                <thead>
+                  <tr>
+                    <th >Nombre Completo del Empleado</th>
+                    <th >Usuario</th>
+                    <th >Foto</th>
+                    <th> </th>
+                  </tr>
+                </thead>
+                  <tr *ngFor="let empleado of empleados" app-empleados-row [empleado]="empleado" ></tr>
+         </table>-->
     </body>
 </html>
