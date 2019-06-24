@@ -25,6 +25,7 @@ import { PrincipalComponent } from './componentes/principal/principal.component'
 import { IncidenteRowComponent } from './componentes/orgs/org-principal/incidente-row/incidente-row.component';
 import { GenRepFormComponent } from './componentes/gen-rep-form/gen-rep-form.component';
 import { LoginFormComponent } from './componentes/login-form/login-form.component'; 
+import { CarouselComponent } from './componentes/carousel/carousel.component';
 
 
 
@@ -80,7 +81,8 @@ const routes: Routes = [
     PrincipalComponent,
     IncidenteRowComponent,
     GenRepFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
