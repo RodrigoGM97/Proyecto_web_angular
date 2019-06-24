@@ -27,6 +27,7 @@ import { GenRepFormComponent } from './componentes/gen-rep-form/gen-rep-form.com
 import { LoginFormComponent } from './componentes/login-form/login-form.component'; 
 import { CarouselComponent } from './componentes/carousel/carousel.component';
 import { EmpleadosRowComponent } from './componentes/admin/admin-principal/empleados-row/empleados-row.component';
+import { ReportesRowComponent } from './componentes/admin/admin-reportes/reportes-row/reportes-row.component';
 
 
 
@@ -84,7 +85,8 @@ const routes: Routes = [
     GenRepFormComponent,
     LoginFormComponent,
     CarouselComponent,
-    EmpleadosRowComponent
+    EmpleadosRowComponent,
+    ReportesRowComponent
   ],
   imports: [
     BrowserModule,

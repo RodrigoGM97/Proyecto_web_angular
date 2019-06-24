@@ -71,47 +71,19 @@
                     <br>
                     <br>
                 <div class="table-responsive">
-                    <table class = "table">
-                    <tr>
-                        <th>ID del reporte</th>
-                        <th>Usuario que hizo el reporte</th>
-                        <th>Delegación</th>
-                        <th>Comentario</th>
-                        <th>Estado</th>
-                        <th> </th>
-                    </tr>
-                    <tr>
-                        <td>34861957</td>
-                        <td>José Ramirez Cruz</td> 
-                        <td>Álvaro Obregón</td> 
-                        <td>Se cayó un poste de luz</td>
-                        <td>
-                            <div class="col-sm col-lg bg-warning rounded">
-                                Reportado
-                            </div>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-lg" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td>26675657</td>
-                        <td>Rodrigo García Mayo</td> 
-                        <td>Benito Juárez</td> 
-                        <td>Se cayó un poste de luz</td>
-                        <td>
-                            <div class="col-sm col-lg bg-success rounded">
-                                Completado
-                            </div>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-outline-primary btn-lg" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </td>
-                    </tr>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID del reporte</th>
+                                <th>Usuario que hizo el reporte</th>
+                                <th>Delegación</th>
+                                <th>Colonia</th>
+                                <th>Comentario</th>
+                                <th>Estado</th>
+                                <th> </th>
+                          </tr>
+                        </thead>
+                            <tr *ngFor="let reporte of reportes" app-reportes-row [reporte]="reporte" ></tr>
                     </table>
                 </div>
             </div>
