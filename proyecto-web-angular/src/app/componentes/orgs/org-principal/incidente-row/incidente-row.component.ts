@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CrudIncidentesReportadosService } from "../../../../services/incidentes-reportados/crud-incidentes-reportados.service";
+
 
 @Component({
   selector: '[app-incidente-row]', //con corchetes se indica que es un componente anidado
@@ -9,14 +11,22 @@ export class IncidenteRowComponent implements OnInit {
 
   @Input() incidente;
 
-  constructor() { }
+  constructor(private crudIncidentesReportadosService:CrudIncidentesReportadosService) { }
 
   ngOnInit() {
   }
 
   incidenteCompletado() {
+    var incidenteActualizado = {
+      id:this.incidente.id,
+      comentario:this.incidente.comentario,
+      estado:"completado"
+    }
+
+    this.crudIncidentesReportadosService.updateIncidente(incidenteActualizado);
     this.incidente.estado = "completado";
     console.log("Se marco incidente '" + this.incidente.comentario + "' como completado");
+    console.log("Incidente: " + this.incidente.id + " " + this.incidente.comentario + " " + this.incidente.estado);
   }
 
   incidenteRechazado() {

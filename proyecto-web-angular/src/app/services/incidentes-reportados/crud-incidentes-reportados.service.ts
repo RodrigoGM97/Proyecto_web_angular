@@ -23,7 +23,11 @@ export class CrudIncidentesReportadosService {
   public deleteIncidente(IncidenteId){
       return this.httpClient.delete(`${this.SERVER_URL + 'incidentes'}/${IncidenteId}`)
   }
-  public updateIncidente(Incidente: {id: number, amount: number, clientId: number, userId: number, description: string}){
-      return this.httpClient.put(`${this.SERVER_URL + 'incidentes'}/${Incidente.id}`, Incidente)
+  public updateIncidente(Incidente: {id: number, comentario: string, estado: string}){
+    this.httpClient.put(`${this.SERVER_URL + 'incidentes'}/${Incidente.id}`, Incidente);
+
+    console.log("nuevo estado: " + Incidente.estado);
+    
+    return;
   }
 }
