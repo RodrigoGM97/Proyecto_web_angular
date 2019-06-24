@@ -16,9 +16,15 @@ import { ToastrModule } from 'ngx-toastr';
 //Importing Router Module
 import { Routes, RouterModule } from '@angular/router';
 
+//Importing Charts module
 import { ChartsModule } from 'ng2-charts';
 
+//Importing menu dropdown menu module
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
+//Importing in memory web api
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PrincipalComponent } from './componentes/principal/principal.component';
@@ -28,8 +34,7 @@ import { LoginFormComponent } from './componentes/login-form/login-form.componen
 import { CarouselComponent } from './componentes/carousel/carousel.component';
 import { EmpleadosRowComponent } from './componentes/admin/admin-principal/empleados-row/empleados-row.component';
 import { ReportesRowComponent } from './componentes/admin/admin-reportes/reportes-row/reportes-row.component';
-import { ReportesRowUserComponent } from './componentes/usuario/cliente-reportes/reportes-row-user/reportes-row-user.component'
-
+import { ReportesRowUserComponent } from './componentes/usuario/cliente-reportes/reportes-row-user/reportes-row-user.component';
 
 const routes: Routes = [
   {
@@ -97,7 +102,8 @@ const routes: Routes = [
     ToastrModule.forRoot(),
     RouterModule.forRoot(routes),
     HttpClientModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   exports:[RouterModule],
   providers: [],

@@ -1,29 +1,29 @@
 import { Component, OnInit, Input,Output,EventEmitter} from '@angular/core';
-import { IncidentesReportadosService } from "../../../services/incidentes-reportados/incidentes-reportados.service";
+import { CrudIncidentesReportadosService } from "../../../services/incidentes-reportados/crud-incidentes-reportados.service"
 
 @Component({
   selector: 'app-org-principal',
   templateUrl: './org-principal.component.html',
   styleUrls: ['./org-principal.component.scss'],
-  providers: [IncidentesReportadosService]
+  providers: []
 })
 export class OrgPrincipalComponent implements OnInit {
 
-  incidentes;
+  incidentes: any[] = [];
 
   show:boolean = false;
   toggleCollapse() {
     this.show = !this.show
   }
 
-  //@Output() clicked=new EventEmitter<string>(); 
-
-  constructor(incidentesReportadosService: IncidentesReportadosService) { 
-    this.incidentes = incidentesReportadosService.getIncidentes();
-    console.log(this.incidentes);
+  constructor(private crudIncidentesReportadosService:CrudIncidentesReportadosService) { 
   }
 
   ngOnInit() {
+    this.crudIncidentesReportadosService.hola().subscribe((data : any[])=>{
+      console.log(data);
+      this.incidentes = data;
+    })
   }
 
   

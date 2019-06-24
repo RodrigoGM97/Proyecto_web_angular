@@ -1,18 +1,9 @@
-import { Injectable } from '@angular/core';
-import { CrudIncidentesReportadosService} from './crud-incidentes-reportados.service';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-@Injectable({
-  providedIn: 'root'
-})
+export class InMemoryDataService implements InMemoryDbService{
 
-export class IncidentesReportadosService{
-
-  constructor() { }
-
-  ngOnInit() {  }
-  
-  getIncidentes() {
-    return [
+  createDb() {
+    let incidentes = [
       {
         id:"34861957",
         comentario:"Se cayó un poste de luz",
@@ -34,5 +25,7 @@ export class IncidentesReportadosService{
         estado: "reportado"
       }
     ];
+
+    return {incidentes};
   }
 }
