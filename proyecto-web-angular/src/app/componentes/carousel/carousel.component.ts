@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent {
-  images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
+  images = ['../../assets/img/carousel1.jpg', '../../assets/img/carousel2.jpg', '../../assets/img/carousel3.jpg'];
 
 }
