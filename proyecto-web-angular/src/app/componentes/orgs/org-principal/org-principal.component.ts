@@ -20,7 +20,7 @@ export class OrgPrincipalComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.crudIncidentesReportadosService.hola().subscribe((data : any[])=>{
+    this.crudIncidentesReportadosService.getIncidentes().subscribe((data : any[])=>{
       console.log(data);
       this.incidentes = data;
     })

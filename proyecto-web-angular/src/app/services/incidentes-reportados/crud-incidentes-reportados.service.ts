@@ -9,7 +9,7 @@ export class CrudIncidentesReportadosService {
   SERVER_URL: string = "http://localhost:8080/api/";
   constructor(private httpClient: HttpClient) { }
 
-  public hola(){ 
+  public getIncidentes(){ 
        return this.httpClient.get(this.SERVER_URL + 'incidentes');
   }
 
