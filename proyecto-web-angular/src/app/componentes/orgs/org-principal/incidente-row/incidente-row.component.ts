@@ -20,11 +20,17 @@ export class IncidenteRowComponent implements OnInit {
     var incidenteActualizado = {
       id:this.incidente.id,
       comentario:this.incidente.comentario,
-      estado:"completado"
+      estado:"completado",
+      calle: this.incidente.calle,
+      numero: this.incidente.numero,
+      delegacion: this.incidente.delegacion,
+      colonia: this.incidente.colonia,
+      fecha: this.incidente.fecha,
+      ine: this.incidente.ine
     }
 
     this.crudIncidentesReportadosService.updateIncidente(incidenteActualizado);
-    this.incidente.estado = "completado";
+    //this.incidente.estado = "completado";
     console.log("Se marco incidente '" + this.incidente.comentario + "' como completado");
     console.log("Incidente: " + this.incidente.id + " " + this.incidente.comentario + " " + this.incidente.estado);
   }
