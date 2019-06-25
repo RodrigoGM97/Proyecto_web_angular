@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -103,6 +104,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     BsDropdownModule.forRoot(),
+    NgbModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   exports:[RouterModule],
