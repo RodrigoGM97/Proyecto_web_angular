@@ -51,17 +51,44 @@
             </div>
             <br>
             <div class="module">
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle bg-success" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Fecha
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">11/06/19</a>
-                    <a class="dropdown-item" href="#">12/06/19</a>
-                    <a class="dropdown-item" href="#">13/06/19</a>
-                  </div>
-                </div>
-                <br>
+                <div class="btn-group" dropdown>
+                    <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle bg-success"
+                            aria-controls="dropdown-basic">
+                      Fecha <span class="caret"></span>
+                    </button>
+                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                        role="menu" aria-labelledby="button-basic">
+                      <li role="menuitem"><a class="dropdown-item" >11/06/2019</a></li>
+                      <li role="menuitem"><a class="dropdown-item" >12/06/2019</a></li>
+                      <li role="menuitem"><a class="dropdown-item" >13/06/2019</a></li>
+                    </ul>
+                    </div>
+                    <div class="btn-group" dropdown>
+                    <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle bg-success"
+                            aria-controls="dropdown-basic">
+                      Delegación <span class="caret"></span>
+                    </button>
+                    <ul id="dropdown-basic2" *dropdownMenu class="dropdown-menu"
+                        role="menu" aria-labelledby="button-basic">
+                      <li role="menuitem"><a class="dropdown-item" >Álvaro Obregón</a></li>
+                      <li role="menuitem"><a class="dropdown-item" >Benito Juárez</a></li>
+                      <li role="menuitem"><a class="dropdown-item" >Cuajimalpa</a></li>
+                    </ul>
+                    </div>
+                    <div class="btn-group" dropdown>
+                            <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle bg-success"
+                                    aria-controls="dropdown-basic">
+                              Colonia <span class="caret"></span>
+                            </button>
+                            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                                role="menu" aria-labelledby="button-basic">
+                              <li role="menuitem"><a class="dropdown-item" >Lomas de Chapultepec</a></li>
+                              <li role="menuitem"><a class="dropdown-item" >Lomas de Reforma</a></li>
+                              <li role="menuitem"><a class="dropdown-item" >Florida</a></li>
+                            </ul>
+                            </div>
+                    <br>
+                    <br>
                 <div class="table-responsive">
                         <table class="table">
                             <thead>
