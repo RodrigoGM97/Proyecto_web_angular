@@ -35,7 +35,6 @@ export class GenRepFormComponent implements OnInit {
   }
   
   btnClick() {
-    console.log("Hola");
     
     var fecha_str:string = <string> this.reporte.fecha;
     var ine_str:string = <string> this.reporte.ine;
@@ -58,8 +57,11 @@ export class GenRepFormComponent implements OnInit {
       this.toastrService.error("Aun necesitas llenar ciertos campos");
       return;
     }
+    if (fecha_str.length != 0 && ine_str.length != 0 && calle_str.length != 0 && numero_str.length != 0 && delegacion_str.length != 0 && colonia_str.length != 0 && comentario_str.length != 0)
+      this.toastrService.success("¡Reporte Generado!", "Estado de reporte:");
     
-    this.toastrService.success("¡Reporte Generado!", "Estado de reporte:");
+    else
+      this.toastrService.error("Aun necesitas llenar ciertos campos");
   }
 
 
