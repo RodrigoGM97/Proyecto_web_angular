@@ -1,10 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CrudIncidentesReportadosService {
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+    })
+  };
 
   SERVER_URL: string = "http://localhost:8080/api/";
   constructor(private httpClient: HttpClient) { }
@@ -29,7 +37,8 @@ export class CrudIncidentesReportadosService {
       return this.httpClient.delete(`${this.SERVER_URL + 'incidentes'}/${IncidenteId}`)
   }
   public updateIncidente(Incidente: {id: number, comentario: string, estado: string, calle:string, numero:number, delegacion:string, colonia:string, fecha:string, ine:string}){
-    this.httpClient.post(`${this.SERVER_URL + 'incidentes'}/${Incidente.id}`, Incidente);
+    
+    this.httpClient.post(`${this.SERVER_URL + 'incidentes'}/${Incidente.id}`, Incidente, this.httpOptions);
 
     console.log("nuevo estado: " + Incidente.estado);
     

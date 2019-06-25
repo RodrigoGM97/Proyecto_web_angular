@@ -25,7 +25,16 @@ export class UsuarioReportesService {
         tipo: "Luz",
         comentario: "Se cayó un poste de luz",
         estado: "Completado"
+      },
+      {
+        id: "26675657fg",
+        delegacion:"Benito Juárez",
+        colonia: "Acacias",
+        tipo: "Luz",
+        comentario: "comentario",
+        estado: "Completado"
       }
+
     ];
   }
 }

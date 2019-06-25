@@ -14,7 +14,7 @@ export class AdminEmpleadosService {
         correo:"JoseRamirezC@CFE.com"
       },
       {
-        nombre:"Rodrigo García Mayo",
+        nombre:"Rodrigo Pedazo García Mayo",
         correo:"RodGarciaMayo@CFE.com"
       }
     ];
