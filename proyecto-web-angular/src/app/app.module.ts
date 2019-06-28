@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader'; 
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -105,7 +107,16 @@ const routes: Routes = [
     HttpClientModule,
     BsDropdownModule.forRoot(),
     NgbModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+    TranslateModule.forRoot({
+      loader:{
+        provide:TranslateLoader,
+        useFactory: (http: HttpClient) => {
+          return new TranslateHttpLoader (http);
+        },
+        deps: [HttpClient]
+      }
+    })
   ],
   exports:[RouterModule],
   providers: [],
