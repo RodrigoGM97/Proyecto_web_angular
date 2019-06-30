@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class Reporte {
     
     constructor (
-        public ine?:string,
+        public curp?:string,
         public comentario?:string,
         public delegacion?:string,
         public colonia?:string,

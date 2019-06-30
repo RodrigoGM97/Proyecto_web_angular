@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Reporte } from '../../clases/reporte';
-import { FormBuilder, FormGroup, FormControl, Validators, NgModel } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-gen-rep-form',
@@ -13,7 +12,7 @@ export class GenRepFormComponent implements OnInit {
   form = new FormGroup({
     calle: new FormControl('calle'),
     fecha: new FormControl('fecha'),
-    ine: new FormControl('ine'),
+    curp: new FormControl('curp'),
     numero: new FormControl('numero'),
     delegacion: new FormControl('delegacion'),
     colonia: new FormControl('colonia'),
@@ -28,7 +27,6 @@ export class GenRepFormComponent implements OnInit {
   
   constructor(private toastrService:ToastrService) {
     this.reporte = new Reporte();
-    this.reporte.ine = "Escoge Archivo";
    }
 
   ngOnInit() {
@@ -37,7 +35,7 @@ export class GenRepFormComponent implements OnInit {
   btnClick() {
     
     var fecha_str:string = <string> this.reporte.fecha;
-    var ine_str:string = <string> this.reporte.ine;
+    var curp_str:string = <string> this.reporte.curp;
     var calle_str:string = <string> this.reporte.calle;
     var numero_str:string = <string> <any> this.reporte.numero;
     var delegacion_str:string = <string> this.reporte.delegacion;
@@ -48,7 +46,7 @@ export class GenRepFormComponent implements OnInit {
       this.form.setValue({
         calle: calle_str,
         fecha: fecha_str,
-        ine: ine_str,
+        curp: curp_str,
         numero: numero_str,
         delegacion: delegacion_str,
         colonia: colonia_str,
@@ -57,7 +55,7 @@ export class GenRepFormComponent implements OnInit {
       this.toastrService.error("Aun necesitas llenar ciertos campos");
       return;
     }
-    if (fecha_str.length != 0 && ine_str.length != 0 && calle_str.length != 0 && numero_str.length != 0 && delegacion_str.length != 0 && colonia_str.length != 0 && comentario_str.length != 0)
+    if (fecha_str.length != 0 && curp_str.length != 0 && calle_str.length != 0 && numero_str.length != 0 && delegacion_str.length != 0 && colonia_str.length != 0 && comentario_str.length != 0)
       this.toastrService.success("¡Reporte Generado!", "Estado de reporte:");
     
     else
