@@ -19,7 +19,7 @@ export class Incidentes extends Entity {
     type: 'string',
     required: true,
   })
-  ine: string;
+  curp: string;
 
   @property({
     type: 'string',
