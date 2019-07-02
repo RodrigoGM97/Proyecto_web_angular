@@ -33,6 +33,11 @@ export class Empleado extends Entity {
   })
   password: string;
 
+  @property({
+    type:'string',
+    required:true,
+  })
+  organizacion: string;
 
   constructor(data?: Partial<Empleado>) {
     super(data);

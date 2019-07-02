@@ -51,6 +51,20 @@ export class EmpleadoController {
     return await this.empleadoRepository.count(where);
   }
 
+  @get('/empleados/{org}', {
+    responses: {
+      '200': {
+        description: 'Empleado model instance',
+        content: {'application/json': {schema: {'x-ts-type': Empleado}}},
+      },
+    },
+  })
+  async findByOrg(
+    @param.query.object('filter', getFilterSchemaFor(Empleado)) filter?: {fields:{id:true, password:false}},
+  ): Promise<Empleado[]> {
+    return await this.empleadoRepository.find(filter);
+  }
+
   @get('/empleados', {
     responses: {
       '200': {
