@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class AdminEmpleadosService {
 
-  endpoint="http://localhost:3000/empleados";
+  endpoint="http://localhost:3000/empleados/admin/";
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':'application/json',
@@ -24,7 +24,7 @@ export class AdminEmpleadosService {
     return body || {};
   }
   
-  getEmpleado(): Observable<any> {
-    return this.http.get(this.endpoint).pipe(map(this.extractData));
+  getEmpleado(organizacion:string): Observable<any> {
+    return this.http.get(this.endpoint + organizacion).pipe(map(this.extractData));
   }
 }

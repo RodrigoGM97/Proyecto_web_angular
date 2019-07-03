@@ -59,10 +59,20 @@ export class EmpleadoController {
       },
     },
   })
-  async findByOrg(
-    @param.query.object('filter', getFilterSchemaFor(Empleado)) filter?: {fields:{id:true, password:false}},
-  ): Promise<Empleado[]> {
-    return await this.empleadoRepository.find(filter);
+  async findByOrg(@param.path.string('org') organizacion : string): Promise<Empleado[]> {
+    return await this.empleadoRepository.findByOrg(organizacion);
+  }
+
+  @get('/empleados/admin/{org}', {
+    responses: {
+      '200': {
+        description: 'Empleado model instance',
+        content: {'application/json': {schema: {'x-ts-type': Empleado}}},
+      },
+    },
+  })
+  async getEmpleados(@param.path.string('org') organizacion : string): Promise<Empleado[]> {
+    return await this.empleadoRepository.getEmpleados(organizacion);
   }
 
   @get('/empleados', {

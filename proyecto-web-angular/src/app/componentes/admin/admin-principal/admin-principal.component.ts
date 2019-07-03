@@ -29,13 +29,13 @@ export class AdminPrincipalComponent implements OnInit {
 }*/
 
   ngOnInit() {
-    this.getEmpleados();
+    this.getEmpleados("cfe");
   }
 
-  getEmpleados()
+  getEmpleados(organizacion:string)
   {
     this.empleados = [];
-    this.adminEmpleadosService.getEmpleado().subscribe((data: {}) => {
+    this.adminEmpleadosService.getEmpleado(organizacion).subscribe((data: {}) => {
       console.log(data);
       this.empleados = data;
     });
