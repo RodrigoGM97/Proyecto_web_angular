@@ -31,7 +31,8 @@
         "organizaciones" : "Organizations",
         "nombre" : "Complete Name",
         "username" : "Username",
-        "foto" : "Photo"
+        "foto" : "Photo",
+        "buscar" : "Search"
     },
     "AdminReportesComponent":
     {
