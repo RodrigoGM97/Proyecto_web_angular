@@ -1,5 +1,5 @@
-import {DefaultCrudRepository} from '@loopback/repository';
-import {Incidentes, IncidentesRelations} from '../models';
+import {DefaultCrudRepository, Filter, Options, repository} from '@loopback/repository';
+import {Incidentes, IncidentesRelations, IncidentesWithRelations} from '../models';
 import {WebReportesDataSource} from '../datasources';
 import {inject} from '@loopback/core';
 
@@ -13,4 +13,13 @@ export class IncidentesRepository extends DefaultCrudRepository<
   ) {
     super(Incidentes, dataSource);
   }
+
+  public getIncidentesOrgByTipo(tipo_reporte?:string) {
+    return this.find({where: {tipo_reporte:tipo_reporte}});
+  }
+
+  public getIncidentesOrgByTipoWithDelegacion(tipo_reporte?:string, delegacion?:string) {
+    return this.find({where: {tipo_reporte:tipo_reporte, delegacion:delegacion}})
+  }
+
 }

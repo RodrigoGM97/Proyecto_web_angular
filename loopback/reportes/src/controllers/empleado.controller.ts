@@ -51,7 +51,7 @@ export class EmpleadoController {
     return await this.empleadoRepository.count(where);
   }
 
-  @get('/empleados/{org}', {
+  @get('/empleadosByOrg/{org}', {
     responses: {
       '200': {
         description: 'Empleado model instance',

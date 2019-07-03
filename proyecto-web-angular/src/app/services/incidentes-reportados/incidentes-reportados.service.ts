@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
 import { CrudIncidentesReportadosService} from './crud-incidentes-reportados.service';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class IncidentesReportadosService{
+
+  ///////////////////////////////////////////////////////
+  endpoint="http://localhost:3000/empleados/admin"
 
   constructor() { }
 

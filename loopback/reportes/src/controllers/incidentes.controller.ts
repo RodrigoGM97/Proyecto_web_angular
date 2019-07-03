@@ -4,6 +4,7 @@ import {
   Filter,
   repository,
   Where,
+  getModelRelations,
 } from '@loopback/repository';
 import {
   post,
@@ -18,6 +19,7 @@ import {
 } from '@loopback/rest';
 import {Incidentes} from '../models';
 import {IncidentesRepository} from '../repositories';
+import { pathExists } from 'fs-extra';
 
 export class IncidentesController {
   constructor(
@@ -83,6 +85,55 @@ export class IncidentesController {
   ): Promise<Count> {
     return await this.incidentesRepository.updateAll(incidentes, where);
   }
+
+  @get('/incidentesOrgByTipo/{tipo_reporte}', {
+    responses: {
+      '200': {
+        description: 'Incidentes model instance',
+        content: {'application/json': {schema: {'x-ts-type': Incidentes}}},
+      },
+    },
+  })
+  async getIncidentesOrgByTipo(@param.path.string('tipo_reporte') tipo_reporte : string) : Promise<Incidentes[]> {
+    return await this.incidentesRepository.getIncidentesOrgByTipo(tipo_reporte);
+  }
+/*
+
+  @get('/incidentesByTipoWithDelegacion/{tipo_reporte, delegacion}', {
+    responses: {
+      '200': {
+        description: 'Incidentes model instance',
+        content: {'application/json': {schema: {'x-ts-type': Incidentes}}},
+      },
+    },
+  })
+  async getIncidentesOrgWithDelegacion(@param.path.string('tipo_reporte') tipo_reporte : string, @param.path.string('delgacion') delegacion:string) : Promise<Incidentes[]> {
+    return await this.incidentesRepository.getIncidentesOrgByTipoWithDelegacion(tipo_reporte, delegacion);
+  }*/
+
+  /*@get('/incidentesByTipoWithColonia/{tipo_reporte}', {
+    responses: {
+      '200': {
+        description: 'Incidentes model instance',
+        content: {'application/json': {schema: {'x-ts-type': Incidentes}}},
+      },
+    },
+  })
+  async getIncidentesOrg(@param.path.string('tipo_reporte') tipo_reporte : string) : Promise<Incidentes[]> {
+    return await this.incidentesRepository.getIncidentesOrg(tipo_reporte);
+  }
+
+  @get('/incidentesByTipoWithDelegacionAndColonia/{tipo_reporte}', {
+    responses: {
+      '200': {
+        description: 'Incidentes model instance',
+        content: {'application/json': {schema: {'x-ts-type': Incidentes}}},
+      },
+    },
+  })
+  async getIncidentesOrg(@param.path.string('tipo_reporte') tipo_reporte : string) : Promise<Incidentes[]> {
+    return await this.incidentesRepository.getIncidentesOrg(tipo_reporte);
+  }*/
 
   @get('/incidentes/{id}', {
     responses: {
