@@ -97,9 +97,9 @@ export class IncidentesController {
   async getIncidentesOrgByTipo(@param.path.string('tipo_reporte') tipo_reporte : string) : Promise<Incidentes[]> {
     return await this.incidentesRepository.getIncidentesOrgByTipo(tipo_reporte);
   }
-/*
 
-  @get('/incidentesByTipoWithDelegacion/{tipo_reporte, delegacion}', {
+
+  @get('/incidentesByTipoWithDelegacion/{tipo_reporte}&{delegacion}', {
     responses: {
       '200': {
         description: 'Incidentes model instance',
@@ -107,9 +107,9 @@ export class IncidentesController {
       },
     },
   })
-  async getIncidentesOrgWithDelegacion(@param.path.string('tipo_reporte') tipo_reporte : string, @param.path.string('delgacion') delegacion:string) : Promise<Incidentes[]> {
+  async getIncidentesOrgWithDelegacion(@param.path.string('tipo_reporte') tipo_reporte : string, @param.path.string('delegacion') delegacion:string) : Promise<Incidentes[]> {
     return await this.incidentesRepository.getIncidentesOrgByTipoWithDelegacion(tipo_reporte, delegacion);
-  }*/
+  }
 
   /*@get('/incidentesByTipoWithColonia/{tipo_reporte}', {
     responses: {
