@@ -1,0 +1,21 @@
+{
+    "PrincipalComponent":
+    {
+        "Reportes":"Reports",
+        "Login":"Login"
+    },
+    "ClientePrincipalComponent":
+    {
+        "ClientePrincipal":"Home",
+        "Areas":"Affected Areas",
+        "Reportes":"Your reports",
+        "GenReporte":"Generate Report",
+        "Agua":"Water",
+        "Luz":"Energy",
+        "AreasAfectadas":"Choose map of affected area",
+        "ReporteLuz":"Energy Reports",
+        "ReporteAgua":"Water Reports",
+        "Color":"Change color",
+        "headergraph":"Generated Reports:"
+    }
+}

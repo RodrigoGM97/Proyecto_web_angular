@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminEmpleadosService } from "../../../services/admin-empleados/admin-empleados.service";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-admin-principal',
@@ -16,12 +17,26 @@ export class AdminPrincipalComponent implements OnInit {
     this.show = !this.show
   }
   
-  constructor(AdminEmpleadosService: AdminEmpleadosService) { 
-    this.empleados = AdminEmpleadosService.getEmpleado();
-    console.log(this.empleados);
+  constructor (public adminEmpleadosService:AdminEmpleadosService, private route:ActivatedRoute){
+
   }
 
+  /*constructor(AdminEmpleadosService: AdminEmpleadosService) { 
+    this.empleados = AdminEmpleadosService.getEmpleado();
+    console.log(this.empleados);
+}*/
+
   ngOnInit() {
+    this.getEmpleados();
+  }
+
+  getEmpleados()
+  {
+    this.empleados = [];
+    this.adminEmpleadosService.getEmpleado().subscribe((data: {}) => {
+      console.log(data);
+      this.empleados = data;
+    });
   }
 
 }

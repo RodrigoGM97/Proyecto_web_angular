@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -9,6 +10,7 @@ import { Color, BaseChartDirective, Label } from 'ng2-charts';
   styleUrls: ['./cliente-principal.component.scss']
 })
 export class ClientePrincipalComponent implements OnInit {
+  public activeLang = 'es';
   show:boolean = false;
   toggleCollapse() {
     this.show = !this.show
@@ -83,7 +85,9 @@ export class ClientePrincipalComponent implements OnInit {
 
   @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
-  constructor() { }
+  constructor(private translate:TranslateService) {
+    this.translate.setDefaultLang('es');
+   }
 
   ngOnInit() {
   }
@@ -132,5 +136,10 @@ export class ClientePrincipalComponent implements OnInit {
   public changeLabel() {
     this.lineChartLabels[2] = ['1st Line', '2nd Line'];
     // this.chart.update();
+  }
+
+  public  cambiarLenguaje(lang){
+    this.activeLang = lang;
+    this.translate.use(lang);
   }
 }

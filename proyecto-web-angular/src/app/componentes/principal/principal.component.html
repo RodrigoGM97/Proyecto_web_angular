@@ -18,10 +18,12 @@
         <div class="collapse navbar-collapse" [class.show]="show" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="cliente-principal"> Reportes</a>
+                    <a class="nav-link" href="cliente-principal"> {{'PrincipalComponent.Reportes' | translate}}</a>
                 </li>
             </ul>
-            <a class="pull-right" href="login"> <strong>Iniciar Sesión </strong><i class="fas fa-sign-in-alt"></i>
+            <button class="button btn" style="color: blue" [ngClass]="{'disabled':activeLang=='es'}" (click)="cambiarLenguaje('es')" >ES</button>
+            <button class="button btn" style="color: blue" [ngClass]="{'disabled':activeLang=='en'}" (click)="cambiarLenguaje('en')" >EN</button> 
+            <a class="pull-right" href="login"> <strong>{{'PrincipalComponent.Login' | translate}} </strong><i class="fas fa-sign-in-alt"></i>
 
             </a>
         </div>

@@ -18,29 +18,31 @@
         <div class="collapse navbar-collapse" [class.show]="show" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="principal">Principal<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="principal">{{'ClientePrincipalComponent.ClientePrincipal' | translate}}<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="cliente-principal">Áreas afectadas<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="cliente-principal">{{'ClientePrincipalComponent.Areas' | translate}}<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="cliente-reportes">Tus Reportes</a>
+                    <a class="nav-link" href="cliente-reportes">{{'ClientePrincipalComponent.Reportes' | translate}}</a>
                 </li>
                 <li>
                     <div class="btn-group" dropdown>
                         <button id="button-basic" dropdownToggle type="button" class="btn bg-success dropdown-toggle"
                                 aria-controls="dropdown-basic">
-                          Generar Reporte<span class="caret"></span>
+                                {{'ClientePrincipalComponent.GenReporte' | translate}}<span class="caret"></span>
                         </button>
                         <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
                             role="menu" aria-labelledby="button-basic">
-                          <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">Agua</a></li>
+                          <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">{{'ClientePrincipalComponent.Agua' | translate}}</a></li>
                           <li class="divider dropdown-divider"></li>
-                          <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">Luz</a></li>
+                          <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">{{'ClientePrincipalComponent.Luz' | translate}}</a></li>
                         </ul>
                       </div>
                 </li>
             </ul>
+            <button class="button btn" style="color: blue" [ngClass]="{'disabled':activeLang=='es'}" (click)="cambiarLenguaje('es')" >ES</button>
+            <button class="button btn" style="color: blue" [ngClass]="{'disabled':activeLang=='en'}" (click)="cambiarLenguaje('en')" >EN</button> 
         </div>
     </nav>
     <br>
@@ -48,16 +50,17 @@
         <div class="btn-group" dropdown>
             <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary bg-success dropdown-toggle"
                     aria-controls="dropdown-basic">
-                    Escoja mapa de área afectada<span class="caret"></span>
+                    {{'ClientePrincipalComponent.AreasAfectadas' | translate}}<span class="caret"></span>
             </button>
             <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
                 role="menu" aria-labelledby="button-basic">
-              <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">Reportes de luz</a></li>
+              <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">{{'ClientePrincipalComponent.ReporteLuz' | translate}}</a></li>
               <li class="divider dropdown-divider"></li>
-              <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">Reportes de agua</a></li>
+              <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">{{'ClientePrincipalComponent.ReporteAgua' | translate}}</a></li>
             </ul>
         </div>
     </div>
+    
     <br>
     <div class="container-fluid">
         <iframe 
@@ -65,7 +68,7 @@
         </iframe>
 
         <br>
-        <h2>Reportes ingresados: </h2>
+        <h2>{{'ClientePrincipalComponent.headergraph' | translate}} </h2>
         
         <div class="flex container-fluid row">
             <div class="flex-item col-sm-6">
@@ -91,9 +94,9 @@
                   <td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>
                 </tr>
               </table>
-              <button mat-button mat-raised-button color="primary" (click)="randomize()">Generar datos</button>
+              <!--<button mat-button mat-raised-button color="primary" (click)="randomize()">Generar datos</button>-->
               <!--<button mat-button mat-raised-button color="primary" (click)="pushOne()">Push</button>-->
-              <button mat-button mat-raised-button color="primary" (click)="changeColor()">Cambiar color</button>
+              <button mat-button mat-raised-button color="primary" (click)="changeColor()">{{'ClientePrincipalComponent.Color' | translate}}</button>
               <!--<button mat-button mat-raised-button color="primary" (click)="hideOne()">Toggle Series B</button>-->
               <!--<button mat-button mat-raised-button color="primary" (click)="changeLabel()">Change Label</button>-->
             </div>

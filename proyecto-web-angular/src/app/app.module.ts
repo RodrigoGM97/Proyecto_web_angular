@@ -25,10 +25,6 @@ import { ChartsModule } from 'ng2-charts';
 //Importing menu dropdown menu module
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
-//Importing in memory web api
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './services/in-memory-data.service';
-
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { IncidenteRowComponent } from './componentes/orgs/org-principal/incidente-row/incidente-row.component';
@@ -107,7 +103,6 @@ const routes: Routes = [
     HttpClientModule,
     BsDropdownModule.forRoot(),
     NgbModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
     TranslateModule.forRoot({
       loader:{
         provide:TranslateLoader,
