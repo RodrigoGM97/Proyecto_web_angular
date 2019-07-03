@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Reporte } from '../../clases/reporte';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-gen-rep-form',
@@ -22,11 +23,12 @@ export class GenRepFormComponent implements OnInit {
   reporte:Reporte;
   delegaciones = ["Alvaro Obregón", "Cuajimalpa"];
   colonias = ["Colonia A", "Colonia B"]
+  public activeLang = 'es';
   
   
-  
-  constructor(private toastrService:ToastrService) {
+  constructor(private toastrService:ToastrService, private translate:TranslateService) {
     this.reporte = new Reporte();
+    this.translate.setDefaultLang(this.activeLang);
    }
 
   ngOnInit() {
@@ -62,5 +64,8 @@ export class GenRepFormComponent implements OnInit {
       this.toastrService.error("Aun necesitas llenar ciertos campos");
   }
 
-
+  public  cambiarLenguaje(lang){
+    this.activeLang = lang;
+    this.translate.use(lang);
+  }
 }

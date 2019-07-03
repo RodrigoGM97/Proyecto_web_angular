@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  public activeLang = 'es';
+
+  constructor(private translate:TranslateService) {
+    this.translate.setDefaultLang(this.activeLang); 
+  }
 
   ngOnInit() {
   }
+
+  public cambiarLenguaje(lang){
+    this.activeLang = lang;
+    this.translate.use(lang);
+  }
+  
 
 }

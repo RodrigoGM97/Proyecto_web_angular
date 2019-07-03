@@ -17,25 +17,27 @@
         <div class="collapse navbar-collapse" [class.show]="show" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="admin-principal">Empleados <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="admin-principal">{{'AdminReportesComponent.empleado' | translate }} <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="admin-reportes">Reportes</a>
+                    <a class="nav-link active" href="admin-reportes">{{'AdminReportesComponent.reportes' | translate }}</a>
                 </li>
             </ul>
-            <a class="pull-right" href="principal"><strong>Log Out </strong><i class="fas fa-sign-out-alt"></i></a>
+            <button class="button btn" style="color: blue" [ngClass]="{'disabled':activeLang=='es'}" (click)="cambiarLenguaje('es')" >ES</button>
+            <button class="button btn" style="color: blue" [ngClass]="{'disabled':activeLang=='en'}" (click)="cambiarLenguaje('en')" >EN</button> 
+            <a class="pull-right" href="principal"><strong>{{'AdminReportesComponent.cierre' | translate }} </strong><i class="fas fa-sign-out-alt"></i></a>
         </div>
     </nav>
         <div class="container-fluid">
             <div class = "page-header">
-               <h1>Reportes por día</h1>
+               <h1>{{'AdminReportesComponent.dia' | translate }}</h1>
             </div>
             <br>
             <div class="module">
                     <div class="btn-group" dropdown>
                     <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle bg-success"
                             aria-controls="dropdown-basic">
-                      Fecha <span class="caret"></span>
+                            {{'AdminReportesComponent.fecha' | translate }} <span class="caret"></span>
                     </button>
                     <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
                         role="menu" aria-labelledby="button-basic">
@@ -74,12 +76,12 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>ID del reporte</th>
-                                <th>Usuario que hizo el reporte</th>
+                                <th>ID</th>
+                                <th>{{'AdminReportesComponent.user' | translate }}</th>
                                 <th>Delegación</th>
                                 <th>Colonia</th>
-                                <th>Comentario</th>
-                                <th>Estado</th>
+                                <th>{{'AdminReportesComponent.comentario' | translate }}</th>
+                                <th>{{'AdminReportesComponent.estado' | translate }}</th>
                                 <th> </th>
                           </tr>
                         </thead>

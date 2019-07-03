@@ -20,39 +20,41 @@
         <div class="collapse navbar-collapse" [class.show]="show" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="principal">Principal<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="principal">{{'ClienteGenReporteComponent.ClientePrincipal' | translate}}<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="cliente-principal">Areas afectadas<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="cliente-principal">{{'ClienteGenReporteComponent.Areas' | translate}}<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="cliente-reportes">Tus Reportes</a>
+                    <a class="nav-link" href="cliente-reportes">{{'ClienteGenReporteComponent.Reportes' | translate}}</a>
                 </li>
                 <li>
                     <div class="btn-group" dropdown>
                         <button id="button-basic" dropdownToggle type="button" class="btn bg-success dropdown-toggle"
                                 aria-controls="dropdown-basic">
-                          Generar Reporte<span class="caret"></span>
+                                {{'ClienteGenReporteComponent.GenReporte' | translate}}<span class="caret"></span>
                         </button>
                         <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
                             role="menu" aria-labelledby="button-basic">
-                          <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">Agua</a></li>
+                          <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">{{'ClienteGenReporteComponent.Agua' | translate}}</a></li>
                           <li class="divider dropdown-divider"></li>
-                          <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">Luz</a></li>
+                          <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">{{'ClienteGenReporteComponent.Luz' | translate}}</a></li>
                         </ul>
                       </div>
                 </li>
             </ul>
+            <button class="button btn" style="color: blue" [ngClass]="{'disabled':activeLang=='es'}" (click)="cambiarLenguaje('es')" >ES</button>
+            <button class="button btn" style="color: blue" [ngClass]="{'disabled':activeLang=='en'}" (click)="cambiarLenguaje('en')" >EN</button> 
         </div>
     </nav>
     <br>
 
-    <div class="d-flex flex-row pl-3">
+    <!--<div class="d-flex flex-row pl-3">
         <div class="dropdown pr-2">
             <div class="btn-group" dropdown>
                 <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary bg-success dropdown-toggle"
                         aria-controls="dropdown-basic">
-                  Delegación<span class="caret"></span>
+                        {{'ClienteGenReporteComponent.Delegacion' | translate}}<span class="caret"></span>
                 </button>
                 <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
                     role="menu" aria-labelledby="button-basic">
@@ -66,7 +68,7 @@
         <div class="btn-group" dropdown>
             <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary bg-success dropdown-toggle"
                     aria-controls="dropdown-basic">
-              Colonia<span class="caret"></span>
+                    {{'ClienteGenReporteComponent.Colonia' | translate}}<span class="caret"></span>
             </button>
             <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
                 role="menu" aria-labelledby="button-basic">
@@ -75,7 +77,7 @@
               <li role="menuitem"><a class="dropdown-item" href="cliente-gen-reporte">Colonia B</a></li>
             </ul>
         </div>            
-    </div>
+    </div>-->
 
 
     <br>

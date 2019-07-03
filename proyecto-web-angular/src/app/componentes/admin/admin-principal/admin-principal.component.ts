@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminEmpleadosService } from "../../../services/admin-empleados/admin-empleados.service";
 import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-admin-principal',
@@ -11,14 +12,15 @@ import { ActivatedRoute } from '@angular/router';
 export class AdminPrincipalComponent implements OnInit {
 
   empleados;
+  public activeLang = 'es';
 
   show:boolean = false;
   toggleCollapse() {
     this.show = !this.show
   }
   
-  constructor (public adminEmpleadosService:AdminEmpleadosService, private route:ActivatedRoute){
-
+  constructor (public adminEmpleadosService:AdminEmpleadosService, private route:ActivatedRoute, private translate:TranslateService){
+    this.translate.setDefaultLang(this.activeLang);
   }
 
   /*constructor(AdminEmpleadosService: AdminEmpleadosService) { 
@@ -37,6 +39,11 @@ export class AdminPrincipalComponent implements OnInit {
       console.log(data);
       this.empleados = data;
     });
+  }
+
+  public cambiarLenguaje(lang){
+    this.activeLang = lang;
+    this.translate.use(lang);
   }
 
 }

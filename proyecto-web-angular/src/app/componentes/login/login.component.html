@@ -11,13 +11,15 @@
 <body class="h-100">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#"><img style="width:200px" src="../../../assets/img/Logo-CDMX.svg" alt="cdmx"></a>
+        <button class="button btn nav-index-top" style="color: blue" [ngClass]="{'disabled':activeLang=='es'}" (click)="cambiarLenguaje('es')" >ES</button>
+        <button class="button btn nav-index-top" style="color: blue" [ngClass]="{'disabled':activeLang=='en'}" (click)="cambiarLenguaje('en')" >EN</button> 
     </nav>
-    <div class="container-fluid full-minus-nav h-100 fixed-top">
+    <div class="container-fluid full-minus-nav h-100 fixed-top z-index-1">
         <div class="row h-100 d-flex justify-content-center align-items-center">
             <div class="col-sm-12 col-md-6 col-lg-5">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="card-title mb-4">Inicio de Sesión</h3>
+                        <h3 class="card-title mb-4">{{'LoginComponent.Login' | translate}}</h3>
                         <!--<form>
                             <div class="input-group form-group mb-2">
                                 <div class="input-group-prepend">
@@ -51,7 +53,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="d-flex justify-content-center">
-                            <a href="#">¿Olvidaste tu contraseña?</a>
+                            <a href="#">{{'LoginComponent.password' | translate}}</a>
                         </div>
                     </div>
                 </div>

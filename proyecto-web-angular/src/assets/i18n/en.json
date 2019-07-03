@@ -4,6 +4,45 @@
         "Reportes":"Reports",
         "Login":"Login"
     },
+    "LoginComponent":
+    {
+        "Login" : "Login",
+        "password" : "Forgot your password?",
+        "recordar" : "Remember me",
+        "regresar" : "Go back",
+        "iniciar" : "Login"
+    },
+    "OrganizacionComponent":
+    {
+        "reporte":"Reports",
+        "cierre":"Log Out",
+        "incidentes" : "Generated Reports",
+        "comentario" : "Comment",
+        "estado" : "Status"
+    },
+    "AdminPrincipalComponent":
+    {
+        "empleado": "Employees",
+        "reportes": "Reports",
+        "cierre" : "Log out",
+        "empleados" : "Employees by Organization",
+        "organizaciones" : "Organizations",
+        "nombre" : "Complete Name",
+        "username" : "Username",
+        "foto" : "Photo"
+    },
+    "AdminReportesComponent":
+    {
+        "empleado": "Employees",
+        "reportes": "Reports",
+        "dia": "Reports per day",
+        "fecha" : "Date",
+        "user" : "User",
+        "comentario" : "Comment",
+        "estado" : "Status",
+        "cierre" : "Log Out"
+
+    },
     "ClientePrincipalComponent":
     {
         "ClientePrincipal":"Home",
@@ -17,5 +56,39 @@
         "ReporteAgua":"Water Reports",
         "Color":"Change color",
         "headergraph":"Generated Reports:"
+    },
+    "ClienteGenReporteComponent":
+    {
+        "ClientePrincipal":"Home",
+        "Areas":"Affected Areas",
+        "Reportes":"Your reports",
+        "GenReporte":"Generate Report",
+        "Agua":"Water",
+        "Luz":"Energy",
+        "AreasAfectadas":"Choose map of affected area",
+        "ReporteLuz":"Energy Reports",
+        "ReporteAgua":"Water Reports",
+        "Delegacion":"Delegación",
+        "Colonia":"Colonia"
+    },
+    "GenRepForm":
+    {
+        "Fecha":"Date:",
+        "FechaVal":"Set the date when the problem started",
+        "Curp":"Curp:",
+        "CurpVal":"Add your CURP to the field",
+        "Calle":"Street:",
+        "CalleVal":"Add the street where the problem occured",
+        "Numero":"Number:",
+        "NumeroVal":"Add the street number where the problem occured",
+        "Delegacion":"Delegación:",
+        "DelegacionVal":"Add the delegación where the problem occured",
+        "Colonia":"Colonia:",
+        "ColoniaVal":"Add the colonia where the problem occured",
+        "Comentario":"Comments:",
+        "ComentarioVal":"Add details concerning the problem",
+        "BtnSubmit":"Submit Report",
+        "ToastRepGen":"Generated Report",
+        "ToastMen":"You can view your reports in Your Reports section"
     }
 }

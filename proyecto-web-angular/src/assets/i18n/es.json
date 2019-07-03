@@ -4,6 +4,45 @@
         "Reportes":"Reports",
         "Login":"Login"
     },
+    "LoginComponent":
+    {
+        "Login" : "Iniciar Sesión",
+        "password" : "¿Olvidaste tu contraseña?",
+        "recordar" : "Recordarme",
+        "regresar" : "Regresar",
+        "iniciar" : "Iniciar Sesión"
+    },
+    "OrganizacionComponent":
+    {
+        "reporte" : "Reportes",
+        "cierre" : "Cerrar Sesión",
+        "incidentes" : "Incidentes Reportados",
+        "comentario" : "Comentario",
+        "estado" : "Estado"
+    },
+    "AdminPrincipalComponent":
+    {
+        "empleado": "Empleados",
+        "reportes": "Reportes",
+        "cierre" : "Cerrar Sesión",
+        "empleados" : "Empleados por Organización",
+        "organizaciones" : "Organizaciones",
+        "nombre" : "Nombre Completo Del Empleado",
+        "username" : "Usuario",
+        "foto" : "Foto"
+    },
+    "AdminReportesComponent":
+    {
+        "empleado": "Empleados",
+        "reportes": "Reportes",
+        "dia": "Reportes por día",
+        "fecha" : "Fecha",
+        "user" : "Usuario que hizo el reporte",
+        "comentario" : "Comentario",
+        "estado" : "Estado",
+        "cierre" : "Cerrar Sesión"
+
+    },
     "ClientePrincipalComponent":
     {
         "ClientePrincipal":"Principal",
@@ -17,5 +56,39 @@
         "ReporteAgua":"Reportes de agua",
         "Color":"Cambiar color",
         "headergraph":"Reportes ingresados:"
+    },
+    "ClienteGenReporteComponent":
+    {
+        "ClientePrincipal":"Principal",
+        "Areas":"Áreas Afectadas",
+        "Reportes":"Tus Reportes",
+        "GenReporte":"Generar Reporte",
+        "Agua":"Agua",
+        "Luz":"Luz",
+        "AreasAfectadas":"Escoja mapa de área afectada",
+        "ReporteLuz":"Reportes de luz",
+        "ReporteAgua":"Reportes de agua",
+        "Delegacion":"Delegación",
+        "Colonia":"Colonia"
+    },
+    "GenRepForm":
+    {
+        "Fecha":"Fecha:",
+        "FechaVal":"Ingrese la fecha donde comenzó la falla",
+        "Curp":"Ingresa tu curp:",
+        "CurpVal":"Ingrese su curp para validar su identidad",
+        "Calle":"Calle:",
+        "CalleVal":"Ingrese la calle donde se tiene la falla",
+        "Numero":"Número:",
+        "NumeroVal":"Ingrese el número del domicilio",
+        "Delegacion":"Delegación:",
+        "DelegacionVal":"Ingrese la delegación donde se encuentre la falla",
+        "Colonia":"Colonia:",
+        "ColoniaVal":"Ingrese la colonia donde se encuentre la falla",
+        "Comentario":"Comentario:",
+        "ComentarioVal":"Ingrese un comentario con los detalles de la falla",
+        "BtnSubmit":"Ingresar Reporte",
+        "ToastRepGen":"¡Reporte Generado!",
+        "ToastMen":"Puedes ver los reportes en la sección Tus Reportes"
     }
 }

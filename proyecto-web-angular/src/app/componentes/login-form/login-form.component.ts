@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserLogin } from '../../clases/user-login';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login-form',
@@ -8,6 +9,8 @@ import { Router } from '@angular/router'
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit {
+
+  public activeLang = 'es';
 
   model = new UserLogin("", "");
 
@@ -32,8 +35,15 @@ export class LoginFormComponent implements OnInit {
 
   get diagnostic() { return JSON.stringify(this.model); }
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private translate:TranslateService) {
+    this.translate.setDefaultLang(this.activeLang); 
+  }
 
   ngOnInit() {
+  }
+
+  public cambiarLenguaje(lang){
+    this.activeLang = lang;
+    this.translate.use(lang);
   }
 }

@@ -19,16 +19,18 @@
         <div class="collapse navbar-collapse" [class.show]="show" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="org-principal">Reportes</a>
+                    <a class="nav-link" href="org-principal">{{'OrganizacionComponent.reporte' | translate}}</a>
                 </li>
             </ul>
-            <a class="pull-right" href="principal"><strong>Log Out </strong><i class="fas fa-sign-out-alt"></i></a>
+            <button class="button btn" style="color: blue" [ngClass]="{'disabled':activeLang=='es'}" (click)="cambiarLenguaje('es')" >ES</button>
+            <button class="button btn" style="color: blue" [ngClass]="{'disabled':activeLang=='en'}" (click)="cambiarLenguaje('en')" >EN</button> 
+            <a class="pull-right" href="principal"><strong>{{'OrganizacionComponent.cierre' | translate}} </strong><i class="fas fa-sign-out-alt"></i></a>
         </div>
     </nav>
 
     <div class="full-minus-nav fixed-top h-100 d-flex justify-content-center z-index-1">
         <div class="container h-100 pt-lg-3 pt-md-3 pt-2 m-0 overflow-scroll-x">
-                <h1 class="mb-lg-4 mb-md-4 mb-2">Incidentes Reportados</h1>
+                <h1 class="mb-lg-4 mb-md-4 mb-2">{{'OrganizacionComponent.incidentes' | translate}}</h1>
                 <div class="row height-85">
                     <div class="col-12 col-md-6 col-lg-6 mb-3 map-height-responsive">
                         <iframe src="https://maps.google.com/maps?q=cdmx&t=&z=11&ie=UTF8&iwloc=&output=embed" class="full"></iframe>
@@ -64,8 +66,8 @@
                                 <thead>
                                   <tr>
                                     <th >ID</th>
-                                    <th >Comentario</th>
-                                    <th >Estado</th>
+                                    <th >{{'OrganizacionComponent.comentario' | translate}}</th>
+                                    <th >{{'OrganizacionComponent.estado' | translate}}</th>
                                   </tr>
                                 </thead>
                                   <tr *ngFor="let incidente of incidentes" app-incidente-row [incidente]="incidente" ></tr>
