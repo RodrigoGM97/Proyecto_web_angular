@@ -45,9 +45,7 @@ export class EmpleadoController {
       },
     },
   })
-  async count(
-    @param.query.object('where', getWhereSchemaFor(Empleado)) where?: Where<Empleado>,
-  ): Promise<Count> {
+  async count(@param.query.object('where', getWhereSchemaFor(Empleado)) where:Where<Empleado>,): Promise<Count> {
     return await this.empleadoRepository.count(where);
   }
 
