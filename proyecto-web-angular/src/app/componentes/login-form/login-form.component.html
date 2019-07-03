@@ -3,13 +3,13 @@
       <div class="input-group-prepend">
           <span class="input-group-text"><i class="fas fa-user"></i></span>
       </div>
-      <input type="text" class="form-control" placeholder="Usuario" required [(ngModel)]="model.username" name="username">
+      <input type="text" class="form-control" placeholder="{{'LoginComponent.Usuario' | translate}}" required [(ngModel)]="model.username" name="username">
   </div>
   <div class="input-group form-group mb-2">
       <div class="input-group-prepend">
           <span class="input-group-text"><i class="fas fa-key"></i></span>
       </div>
-      <input type="password" class="form-control" placeholder="Contraseña" required [(ngModel)]="model.password" name="password">
+      <input type="password" class="form-control" placeholder="{{'LoginComponent.pass' | translate}}" required [(ngModel)]="model.password" name="password">
   </div>
   <div class="form-check mb-3">
       <input type="checkbox" class="form-check-input" id="remember_me">

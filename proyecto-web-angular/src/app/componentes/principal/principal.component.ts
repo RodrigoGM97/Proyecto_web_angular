@@ -22,7 +22,7 @@ export class PrincipalComponent implements OnInit {
   ngOnInit() {
   }
 
-  public  cambiarLenguaje(lang){
+  public cambiarLenguaje(lang){
     this.activeLang = lang;
     this.translate.use(lang);
   }
