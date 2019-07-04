@@ -10,6 +10,10 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./cliente-principal.component.scss']
 })
 export class ClientePrincipalComponent implements OnInit {
+  name = 'Angular 5';
+  lat:any;
+  lng:any;
+  
   public activeLang = 'es';
   show:boolean = false;
   toggleCollapse() {
@@ -87,6 +91,13 @@ export class ClientePrincipalComponent implements OnInit {
 
   constructor(private translate:TranslateService) {
     this.translate.setDefaultLang('es');
+    if (navigator)
+    {
+    navigator.geolocation.getCurrentPosition( pos => {
+        this.lng = +pos.coords.longitude;
+        this.lat = +pos.coords.latitude;
+      });
+    }
    }
 
   ngOnInit() {
