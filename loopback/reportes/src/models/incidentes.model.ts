@@ -10,7 +10,7 @@ export class Incidentes extends Entity {
   id: number;
 
   @property({
-    type: 'date',
+    type: 'string',
     required: true,
   })
   fecha: string;
