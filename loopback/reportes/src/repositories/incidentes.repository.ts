@@ -28,6 +28,11 @@ export class IncidentesRepository extends DefaultCrudRepository<
     return this.find({where: {delegacion:delegacion, colonia:colonia, fecha:fecha}})
   }
 
+  //Devuelve los incidentes de luz y de agua reportados por el usuario (se busca por curp)
+  public getIncidentesUser(delegacion:string, colonia:string, fecha:string, curp:string) {
+    return this.find({where: {delegacion:delegacion, colonia:colonia, fecha:fecha, curp:curp}});
+  }
+
   public createIncidente( nuevoRegistro: Object) {
     return this.create(nuevoRegistro);
   }

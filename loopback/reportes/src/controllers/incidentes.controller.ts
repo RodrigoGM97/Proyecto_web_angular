@@ -123,6 +123,18 @@ export class IncidentesController {
     return await this.incidentesRepository.getIncidentesAdmin(delegacion, colonia, fecha);
   }
 
+  @get('/incidentesUser/{delegacion}&{colonia}&{fecha}&{curp}', {
+    responses: {
+      '200': {
+        description: 'Incidentes model instance',
+        content: {'application/json': {schema: {'x-ts-type': Incidentes}}},
+      },
+    },
+  })
+  async getIncidentesUser(@param.path.string('delegacion') delegacion:string, @param.path.string('colonia') colonia : string, @param.path.string('fecha') fecha:string, @param.path.string('curp') curp : string) : Promise<Incidentes[]> {
+    return await this.incidentesRepository.getIncidentesUser(delegacion, colonia, fecha, curp);
+  }
+
   @get('/incidentes/{id}', {
     responses: {
       '200': {
