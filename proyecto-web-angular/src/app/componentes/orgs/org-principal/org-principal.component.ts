@@ -22,11 +22,26 @@ export class OrgPrincipalComponent implements OnInit {
     this.translate.setDefaultLang(this.activeLang); 
   }
 
+  delegacion: string;
+  colonia: string;
+
+  options2 = [
+    { name: "Álvaro Obregón", value: 1 },
+    { name: "Benito Juárez", value: 2 },
+    { name: "Cuajimalpa", value: 3 }
+  ]
+  options3 = [
+    { name: "Lomas de Chapultepec", value: 1 },
+    { name: "Lomas de Reforma", value: 2 },
+    { name: "Florida", value: 3 }
+  ]
+
+  print() {
+    console.log("My input: ", this.delegacion);
+    console.log("My input: ", this.colonia);
+  }
+
   ngOnInit() {
-    this.crudIncidentesReportadosService.getIncidentes().subscribe((data : any[])=>{
-      console.log(data);
-      this.incidentes = data;
-    })
   }
 
   public cambiarLenguaje(lang){
