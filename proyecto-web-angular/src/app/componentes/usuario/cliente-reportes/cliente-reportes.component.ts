@@ -12,15 +12,15 @@ export class ClienteReportesComponent implements OnInit {
 
   incidentes;
   public activeLang = 'es';
-
+  curp;
   show:boolean = false;
   toggleCollapse() {
     this.show = !this.show
   }
 
-  selectedOption: string;
-  selectedOption2: string;
-  selectedOption3: string;
+  fecha: string;
+  delegacion: string;
+  colonia: string;
 
   options = [
     { name: "11/06/2019", value: 1 },
@@ -39,9 +39,10 @@ export class ClienteReportesComponent implements OnInit {
   ]
 
   print() {
-    console.log("My input: ", this.selectedOption);
-    console.log("My input: ", this.selectedOption2);
-    console.log("My input: ", this.selectedOption3);
+    console.log("My input: ", this.fecha);
+    console.log("My input: ", this.delegacion);
+    console.log("My input: ", this.colonia);
+    console.log("My input: ", this.curp);
   }
 
   constructor(UsuarioReportesService: UsuarioReportesService, private translate:TranslateService) { 
