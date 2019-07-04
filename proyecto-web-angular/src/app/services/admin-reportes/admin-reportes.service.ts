@@ -1,30 +1,30 @@
 import { Injectable } from '@angular/core';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminReportesService {
 
-  constructor() { }
+  endpoint="http://localhost:3000/incidentesAdmin/";
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':'application/json',
+    })
+  };
 
-  getReportes() {
-    return [
-      {
-        id: "34861957",
-        usuario:"José Ramirez Cruz",
-        delegacion:"Álvaro Obregón",
-        colonia: "Florida",
-        comentario: "Se cayó un poste de luz",
-        estado: "Reportado"
-      },
-      {
-        id: "26675657",
-        usuario:"Rodrigo García Mayo",
-        delegacion:"Benito Juárez",
-        colonia: "Acacias",
-        comentario: "Se cayó un poste de luz",
-        estado: "Completado"
-      }
-    ];
+  constructor(public http:HttpClient) { 
+    
+  }
+
+  private extractData(res:Response) {
+    let body = res;
+    return body || {};
+  }
+  
+  getReportes(delegacion:string, colonia:string, fecha:string): Observable<any> {
+    return this.http.get(this.endpoint + delegacion + colonia + fecha).pipe(map(this.extractData));
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminReportesService } from "../../../services/admin-reportes/admin-reportes.service";
+import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -18,9 +19,9 @@ export class AdminReportesComponent implements OnInit {
     this.show = !this.show
   }
 
-  selectedOption: string;
-  selectedOption2: string;
-  selectedOption3: string;
+  fecha: string;
+  delegacion: string;
+  colonia: string;
 
   options = [
     { name: "11/06/2019", value: 1 },
@@ -39,18 +40,29 @@ export class AdminReportesComponent implements OnInit {
   ]
 
   print() {
-    console.log("My input: ", this.selectedOption);
-    console.log("My input: ", this.selectedOption2);
-    console.log("My input: ", this.selectedOption3);
+    console.log("My input: ", this.fecha);
+    console.log("My input: ", this.delegacion);
+    console.log("My input: ", this.colonia);
+    this.fecha.split('/').join('%2F');
+    this.delegacion+="&";
+    this.colonia+="&";
+    this.getReportes(this.delegacion, this.colonia, this.fecha.split('/').join('%2F'));
   }
 
-  constructor(AdminReportesService: AdminReportesService, private translate:TranslateService) { 
-    this.reportes = AdminReportesService.getReportes();
-    console.log(this.reportes);
+  constructor(public AdminReportesService: AdminReportesService, private route:ActivatedRoute, private translate:TranslateService) { 
     this.translate.setDefaultLang(this.activeLang);
   }
 
   ngOnInit() {
+  }
+
+  getReportes(delegacion:string, colonia:string, fecha:string)
+  {
+    this.reportes = [];
+    this.AdminReportesService.getReportes(delegacion, colonia, fecha).subscribe((data: {}) => {
+      console.log(data);
+      this.reportes = data;
+    });
   }
 
   public cambiarLenguaje(lang){
