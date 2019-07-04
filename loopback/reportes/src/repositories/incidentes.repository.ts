@@ -27,4 +27,8 @@ export class IncidentesRepository extends DefaultCrudRepository<
   public getIncidentesAdmin(delegacion:string, colonia:string, fecha:string) {
     return this.find({where: {delegacion:delegacion, colonia:colonia, fecha:fecha}})
   }
+
+  public createIncidente( nuevoRegistro: Object) {
+    return this.create(nuevoRegistro);
+  }
 }
