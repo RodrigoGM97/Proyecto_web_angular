@@ -67,7 +67,7 @@ export class GenRepFormComponent implements OnInit {
     if (fecha_str.length != 0 && curp_str.length != 0 && calle_str.length != 0 && numero_str.length != 0 && delegacion_str.length != 0 && colonia_str.length != 0 && comentario_str.length != 0)
     {
       this.toastrService.success("¡Reporte Generado!", "Estado de reporte:");
-      this.reporteService.addReporte(this.reporte).subscribe(resp => console.log(resp));
+      this.reporteService.addReporte(this.reporte).subscribe();
     }
     
     else
