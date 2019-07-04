@@ -74,7 +74,7 @@
         <h2>{{'ClientePrincipalComponent.headergraph' | translate}} </h2>
         
         <div class="flex container-fluid row">
-            <div class="flex-item col-sm-6">
+            <!--<div class="flex-item col-sm-6">
                 <div style="display: block;">
                     <canvas baseChart width="100%" height="100%"
                           [datasets]="lineChartData"
@@ -96,13 +96,19 @@
                 <tr *ngFor="let d of lineChartData; let i=index" [class]="'line-'+i">
                   <td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>
                 </tr>
-              </table>
+              </table>-->
               <!--<button mat-button mat-raised-button color="primary" (click)="randomize()">Generar datos</button>-->
               <!--<button mat-button mat-raised-button color="primary" (click)="pushOne()">Push</button>-->
-              <button mat-button mat-raised-button color="primary" (click)="changeColor()">{{'ClientePrincipalComponent.Color' | translate}}</button>
+              <!--<button mat-button mat-raised-button color="primary" (click)="changeColor()">{{'ClientePrincipalComponent.Color' | translate}}</button>-->
               <!--<button mat-button mat-raised-button color="primary" (click)="hideOne()">Toggle Series B</button>-->
               <!--<button mat-button mat-raised-button color="primary" (click)="changeLabel()">Change Label</button>-->
-            </div>
+            <!--</div>-->
+            <div style="width: 100%" class="flex-item">
+                <canvas baseChart
+                        [data]="pieChartData"
+                        [labels]="pieChartLabels"
+                        [chartType]="pieChartType"></canvas>
+              </div>
         </div>
     </div>
 
