@@ -14,16 +14,14 @@ export class AdminPrincipalComponent implements OnInit {
   empleados;
   public activeLang = 'es';
   selectedOption: string;
-  printedOption: string;
 
   options = [
     { name: "CFE", value: 1 },
     { name: "CNA", value: 2 }
   ]
   print() {
-    this.printedOption = this.selectedOption;
     console.log("My input: ", this.selectedOption);
-    this.getEmpleados(this.printedOption.toLowerCase());
+    this.getEmpleados(this.selectedOption.toLowerCase());
   }
 
   show:boolean = false;

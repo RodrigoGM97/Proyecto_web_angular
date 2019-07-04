@@ -48,12 +48,18 @@
 @mixin small {
     @media(max-width:767px) {
         @content;
+        select {
+            width: 95px;
+        }
     }
 }
 
 @mixin medium {
     @media(min-width:768px) and (max-width:992px) {
         @content;
+        select {
+            width: 180px;
+        }
     }
 }
 
