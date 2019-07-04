@@ -7,7 +7,9 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./cliente-gen-reporte.component.scss']
 })
 export class ClienteGenReporteComponent implements OnInit {
-
+  name = 'Angular 5';
+  lat:any;
+  lng:any;
   public activeLang = 'es';
   
   show:boolean = false;
@@ -17,6 +19,13 @@ export class ClienteGenReporteComponent implements OnInit {
 
   constructor(private translate:TranslateService) { 
     this.translate.setDefaultLang(this.activeLang);
+    if (navigator)
+    {
+    navigator.geolocation.getCurrentPosition( pos => {
+        this.lng = +pos.coords.longitude;
+        this.lat = +pos.coords.latitude;
+      });
+    }
   }
 
   ngOnInit() {

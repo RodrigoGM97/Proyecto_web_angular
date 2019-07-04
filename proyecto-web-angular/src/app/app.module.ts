@@ -4,7 +4,8 @@ import { FormsModule }   from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader'; 
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AgmCoreModule } from '@agm/core'; 
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
@@ -95,6 +96,9 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCxwXAyi4yoI0b-tqZFtEyvxfNiIfQ5M8k'
+    }),
     ChartsModule,
     BrowserAnimationsModule,
     FormsModule,
