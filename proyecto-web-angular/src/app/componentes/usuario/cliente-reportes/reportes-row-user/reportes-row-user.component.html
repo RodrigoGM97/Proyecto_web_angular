@@ -1,10 +1,10 @@
 <td scope="row">{{incidente.id}}</td>
 <td >{{incidente.delegacion}}</td>
 <td >{{incidente.colonia}}</td>
-<td >{{incidente.tipo}}</td>
+<td >{{incidente.tipo_reporte}}</td>
 <td >{{incidente.comentario}}</td>
 <td >
-    <div class="col-sm col-lg rounded" [class.bg-success]="incidente.estado == 'Completado'" [class.bg-warning]="incidente.estado == 'Reportado'">
+    <div class="col-sm col-lg rounded" [class.bg-success]="incidente.estado == 'completado'" [class.bg-warning]="incidente.estado == 'reportado'">
         {{incidente.estado}}
     </div>
 </td>

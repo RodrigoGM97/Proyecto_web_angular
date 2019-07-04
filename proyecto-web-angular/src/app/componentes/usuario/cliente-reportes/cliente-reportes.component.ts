@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioReportesService } from "../../../services/usuario-reportes/usuario-reportes.service";
 import { TranslateService } from '@ngx-translate/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cliente-reportes',
@@ -39,19 +40,32 @@ export class ClienteReportesComponent implements OnInit {
   ]
 
   print() {
+    this.fecha.split('/').join('%2F');
+    this.delegacion += "&";
+    this.colonia += "&";
+    this.fecha += "&";
+    this.getReportes(this.delegacion, this.colonia, this.fecha.split('/').join('%2F'), this.curp);
     console.log("My input: ", this.fecha);
     console.log("My input: ", this.delegacion);
     console.log("My input: ", this.colonia);
     console.log("My input: ", this.curp);
   }
 
-  constructor(UsuarioReportesService: UsuarioReportesService, private translate:TranslateService) { 
-    this.incidentes = UsuarioReportesService.getReportes();
+  constructor(public UsuarioReportesService: UsuarioReportesService, private translate:TranslateService, private route:ActivatedRoute) { 
     console.log(this.incidentes);
     this.translate.setDefaultLang(this.activeLang);
   }
 
   ngOnInit() {
+  }
+
+  getReportes(delegacion:string, colonia:string, fecha:string, curp:string)
+  {
+    this.incidentes = [];
+    this.UsuarioReportesService.getReporte(delegacion, colonia, fecha, curp).subscribe((data:{}) => {
+      console.log(data);
+      this.incidentes = data;
+    })
   }
 
   public cambiarLenguaje(lang){

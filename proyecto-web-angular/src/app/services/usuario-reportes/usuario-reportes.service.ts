@@ -1,40 +1,30 @@
 import { Injectable } from '@angular/core';
-import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrier';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioReportesService {
 
-  constructor() { }
+  endpoint="http://localhost:3000/incidentesUser/";
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':'application/json',
+    })
+  };
 
-  getReportes() {
-    return [
-      {
-        id: "34861957",
-        delegacion:"Álvaro Obregón",
-        colonia: "Florida",
-        tipo: "Luz",
-        comentario: "Se cayó un poste de luz",
-        estado: "Reportado"
-      },
-      {
-        id: "26675657",
-        delegacion:"Benito Juárez",
-        colonia: "Acacias",
-        tipo: "Luz",
-        comentario: "Se cayó un poste de luz",
-        estado: "Completado"
-      },
-      {
-        id: "26675657fg",
-        delegacion:"Benito Juárez",
-        colonia: "Acacias",
-        tipo: "Luz",
-        comentario: "comentario",
-        estado: "Completado"
-      }
+  constructor(public http:HttpClient) { 
+    
+  }
 
-    ];
+  private extractData(res:Response) {
+    let body = res;
+    return body || {};
+  }
+  
+  getReporte(delegacion:string, colonia:string, fecha:string, curp:string ): Observable<any> {
+    return this.http.get(this.endpoint + delegacion + colonia + fecha + curp).pipe(map(this.extractData));
   }
 }
