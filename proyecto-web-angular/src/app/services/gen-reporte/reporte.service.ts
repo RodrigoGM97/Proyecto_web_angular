@@ -36,7 +36,7 @@ export class ReporteService {
 
   addReporte (reporte): Observable<any> {
     console.log(reporte);
-    return this.http.post<any>(this.endpoint, reporte, this.httpOptions).pipe(
+    return this.http.post<any>(this.endpoint, JSON.stringify(reporte), this.httpOptions).pipe(
       tap((reporte) => console.log(`added reporte w/ id=${reporte.id}`)),
       catchError(this.handleError<any>('addReporte'))
     );
