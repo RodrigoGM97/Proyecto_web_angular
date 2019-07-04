@@ -22,4 +22,9 @@ export class IncidentesRepository extends DefaultCrudRepository<
   public getIncidentesOrgWithDelAndColAndFecha(tipo_reporte:string, delegacion:string, colonia:string, fecha:string) {
     return this.find({where: {tipo_reporte:tipo_reporte, delegacion:delegacion, colonia:colonia, fecha:fecha}})
   }
+
+  //Devuelve los incidentes de luz y de agua por delegación, colonia y fecha
+  public getIncidentesAdmin(delegacion:string, colonia:string, fecha:string) {
+    return this.find({where: {delegacion:delegacion, colonia:colonia, fecha:fecha}})
+  }
 }
