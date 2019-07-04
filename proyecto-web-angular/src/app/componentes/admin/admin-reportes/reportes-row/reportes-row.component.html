@@ -4,12 +4,12 @@
 <td >{{reporte.colonia}}</td>
 <td >{{reporte.comentario}}</td>
 <td >
-    <div class="col-sm col-lg rounded" [class.bg-success]="reporte.estado == 'completado'" [class.bg-warning]="reporte.estado == 'reportado'">
+    <div class="col-sm col-lg rounded" [class.bg-success]="reporte.estado == 'Completado'" [class.bg-warning]="reporte.estado == 'Reportado'">
         {{reporte.estado}}
     </div>
 </td>
 <td>
-    <button type="button" class="btn btn-outline-primary btn-lg" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
+    <button type="button" class="btn btn-outline-primary btn-lg" aria-label="Close" (click)="delete(reporte.id)">
+        <span aria-hidden="true">&times;</span>
     </button>
 </td>
