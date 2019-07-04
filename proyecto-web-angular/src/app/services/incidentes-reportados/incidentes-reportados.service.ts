@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CrudIncidentesReportadosService} from './crud-incidentes-reportados.service';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -10,35 +10,22 @@ import { map } from 'rxjs/operators';
 
 export class IncidentesReportadosService{
 
-  ///////////////////////////////////////////////////////
-  endpoint="http://localhost:3000/empleados/admin"
+  endpoint="http://localhost:3000/incidentesOrgWithFilters/"
 
-  constructor() { }
+  constructor(public http:HttpClient) { }
 
   ngOnInit() {  }
   
-  getIncidentes() {
-    return [
-      {
-        id:"34861957",
-        comentario:"Se cayó un poste de luz",
-        estado: "reportado"
-      },
-      {
-        id:"26675657",
-        comentario:"Se quemó un transformador",
-        estado: "completado"
-      },
-      {
-        id:"12673387",
-        comentario:"Hay un cable caído",
-        estado: "rechazado"
-      },
-      {
-        id:"26627349",
-        comentario:"Cayó un rayo en un poste",
-        estado: "reportado"
-      }
-    ];
+  private extractData(res:Response) {
+    let body = res;
+    return body || {};
+  }
+
+  getIncidentes(tipo_reporte:string, delegacion:string, colonia:string): Observable<any> {
+
+    var encodedURI = encodeURI(tipo_reporte + "&" + delegacion + "&" + colonia);
+    console.log(encodedURI);
+
+    return this.http.get(this.endpoint + encodedURI).pipe(map(this.extractData));
   }
 }

@@ -1,16 +1,18 @@
 import { Component, OnInit, Input,Output,EventEmitter} from '@angular/core';
-import { CrudIncidentesReportadosService } from "../../../services/incidentes-reportados/crud-incidentes-reportados.service";
+import { IncidentesReportadosService } from "../../../services/incidentes-reportados/incidentes-reportados.service"
+import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-org-principal',
   templateUrl: './org-principal.component.html',
   styleUrls: ['./org-principal.component.scss'],
-  providers: []
+  providers: [IncidentesReportadosService]
 })
 export class OrgPrincipalComponent implements OnInit {
 
-  incidentes: any[] = [];
+  incidentes;
   public activeLang = 'es';
 
   show:boolean = false;
@@ -18,10 +20,7 @@ export class OrgPrincipalComponent implements OnInit {
     this.show = !this.show
   }
 
-  constructor(private crudIncidentesReportadosService:CrudIncidentesReportadosService, private translate:TranslateService) {
-    this.translate.setDefaultLang(this.activeLang); 
-  }
-
+  tipo_reporte: string;
   delegacion: string;
   colonia: string;
 
@@ -33,7 +32,8 @@ export class OrgPrincipalComponent implements OnInit {
   options3 = [
     { name: "Lomas de Chapultepec", value: 1 },
     { name: "Lomas de Reforma", value: 2 },
-    { name: "Florida", value: 3 }
+    { name: "Florida", value: 3 },
+    { name: "Santa Fe", value: 4}
   ]
 
   print() {
@@ -41,7 +41,23 @@ export class OrgPrincipalComponent implements OnInit {
     console.log("My input: ", this.colonia);
   }
 
+  constructor(public incidentesReportadosService:IncidentesReportadosService, private route:ActivatedRoute, private translate:TranslateService) {
+    this.translate.setDefaultLang(this.activeLang); 
+  }
+
   ngOnInit() {
+  }
+
+  getIncidentes(tipo_reporte:string, delegacion:string, colonia:string)
+  {
+    console.log("My input: ", this.delegacion);
+    console.log("My input: ", this.colonia);
+
+    this.incidentes = [];
+    this.incidentesReportadosService.getIncidentes(tipo_reporte, delegacion, colonia).subscribe((data: {}) => {
+      console.log(data);
+      this.incidentes = data;
+    });
   }
 
   public cambiarLenguaje(lang){

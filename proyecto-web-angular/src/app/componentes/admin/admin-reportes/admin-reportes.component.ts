@@ -70,4 +70,18 @@ export class AdminReportesComponent implements OnInit {
     this.translate.use(lang);
   }
 
+  deleteReporte($event) {
+    console.log("id a ser eliminado: " + $event);
+    this.AdminReportesService.deleteReporte($event).subscribe(
+      res => 
+      {
+        //this.getReportes("Beni");
+      },
+      (err) =>
+      {
+        console.log(err);
+      }
+    );
+  }
+
 }

@@ -2,6 +2,7 @@ import {DefaultCrudRepository, Filter, Options, repository} from '@loopback/repo
 import {Incidentes, IncidentesRelations, IncidentesWithRelations} from '../models';
 import {WebReportesDataSource} from '../datasources';
 import {inject} from '@loopback/core';
+import { del } from '@loopback/rest';
 
 export class IncidentesRepository extends DefaultCrudRepository<
   Incidentes,
@@ -16,6 +17,11 @@ export class IncidentesRepository extends DefaultCrudRepository<
 
   public getIncidentesOrgByTipo(tipo_reporte?:string) {
     return this.find({where: {tipo_reporte:tipo_reporte}});
+  }
+
+  //Devuelve los incidentes con base en el tipo de reporte, la delegación y la colonia
+  public getIncidentesOrgWithFilters(tipo_reporte?:string, delegacion?:string, colonia?:string) {
+    return this.find({where:{tipo_reporte:tipo_reporte, delegacion:delegacion, colonia:colonia}});
   }
 
   //Devuelve los incidentes con base en el tipo de reporte, delegación, colonia y fecha, regresa todos los campos

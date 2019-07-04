@@ -68,7 +68,7 @@
                                 <th> </th>
                           </tr>
                         </thead>
-                            <tr *ngFor="let reporte of reportes" app-reportes-row [reporte]="reporte" ></tr>
+                            <tr *ngFor="let reporte of reportes" app-reportes-row [reporte]="reporte" (deleteMsg)="deleteReporte($event)" ></tr>
                     </table>
                 </div>
             </div>
