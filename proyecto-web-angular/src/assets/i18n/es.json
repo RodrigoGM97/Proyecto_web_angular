@@ -74,6 +74,12 @@
         "Delegacion":"Delegación",
         "Colonia":"Colonia"
     },
+    "ClienteReporteComponent":
+    {
+        "buscar":"Buscar",
+        "tipo": "Tipo de reporte",
+        "reportes": "Reportes"
+    },
     "GenRepForm":
     {
         "Fecha":"Fecha:",
