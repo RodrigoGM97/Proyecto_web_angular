@@ -18,8 +18,8 @@ export class IncidentesRepository extends DefaultCrudRepository<
     return this.find({where: {tipo_reporte:tipo_reporte}});
   }
 
-  public getIncidentesOrgByTipoWithDelegacion(tipo_reporte?:string, delegacion?:string) {
-    return this.find({where: {tipo_reporte:tipo_reporte, delegacion:delegacion}})
+  //Devuelve los incidentes con base en el tipo de reporte, delegación, colonia y fecha, regresa todos los campos
+  public getIncidentesOrgWithDelAndColAndFecha(tipo_reporte:string, delegacion:string, colonia:string, fecha:string) {
+    return this.find({where: {tipo_reporte:tipo_reporte, delegacion:delegacion, colonia:colonia, fecha:fecha}})
   }
-
 }

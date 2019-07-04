@@ -99,7 +99,7 @@ export class IncidentesController {
   }
 
 
-  @get('/incidentesByTipoWithDelegacion/{tipo_reporte}&{delegacion}', {
+  @get('/incidentesByTipoWithDelegacion/{tipo_reporte}&{delegacion}&{colonia}&{fecha}', {
     responses: {
       '200': {
         description: 'Incidentes model instance',
@@ -107,33 +107,9 @@ export class IncidentesController {
       },
     },
   })
-  async getIncidentesOrgWithDelegacion(@param.path.string('tipo_reporte') tipo_reporte : string, @param.path.string('delegacion') delegacion:string) : Promise<Incidentes[]> {
-    return await this.incidentesRepository.getIncidentesOrgByTipoWithDelegacion(tipo_reporte, delegacion);
+  async getIncidentesOrgWithDelAndColAndFecha(@param.path.string('tipo_reporte') tipo_reporte : string, @param.path.string('delegacion') delegacion:string, @param.path.string('colonia') colonia : string, @param.path.string('fecha') fecha:string) : Promise<Incidentes[]> {
+    return await this.incidentesRepository.getIncidentesOrgWithDelAndColAndFecha(tipo_reporte, delegacion, colonia, fecha);
   }
-
-  /*@get('/incidentesByTipoWithColonia/{tipo_reporte}', {
-    responses: {
-      '200': {
-        description: 'Incidentes model instance',
-        content: {'application/json': {schema: {'x-ts-type': Incidentes}}},
-      },
-    },
-  })
-  async getIncidentesOrg(@param.path.string('tipo_reporte') tipo_reporte : string) : Promise<Incidentes[]> {
-    return await this.incidentesRepository.getIncidentesOrg(tipo_reporte);
-  }
-
-  @get('/incidentesByTipoWithDelegacionAndColonia/{tipo_reporte}', {
-    responses: {
-      '200': {
-        description: 'Incidentes model instance',
-        content: {'application/json': {schema: {'x-ts-type': Incidentes}}},
-      },
-    },
-  })
-  async getIncidentesOrg(@param.path.string('tipo_reporte') tipo_reporte : string) : Promise<Incidentes[]> {
-    return await this.incidentesRepository.getIncidentesOrg(tipo_reporte);
-  }*/
 
   @get('/incidentes/{id}', {
     responses: {
