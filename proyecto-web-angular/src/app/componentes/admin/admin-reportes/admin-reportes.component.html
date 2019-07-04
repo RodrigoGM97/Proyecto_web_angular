@@ -34,44 +34,27 @@
             </div>
             <br>
             <div class="module">
-                    <div class="btn-group" dropdown>
-                    <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle bg-success"
-                            aria-controls="dropdown-basic">
-                            {{'AdminReportesComponent.fecha' | translate }} <span class="caret"></span>
-                    </button>
-                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-                        role="menu" aria-labelledby="button-basic">
-                      <li role="menuitem"><a class="dropdown-item" >11/06/2019</a></li>
-                      <li role="menuitem"><a class="dropdown-item" >12/06/2019</a></li>
-                      <li role="menuitem"><a class="dropdown-item" >13/06/2019</a></li>
-                    </ul>
-                    </div>
-                    <div class="btn-group" dropdown>
-                    <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle bg-success"
-                            aria-controls="dropdown-basic">
-                      Delegación <span class="caret"></span>
-                    </button>
-                    <ul id="dropdown-basic2" *dropdownMenu class="dropdown-menu"
-                        role="menu" aria-labelledby="button-basic">
-                      <li role="menuitem"><a class="dropdown-item" >Álvaro Obregón</a></li>
-                      <li role="menuitem"><a class="dropdown-item" >Benito Juárez</a></li>
-                      <li role="menuitem"><a class="dropdown-item" >Cuajimalpa</a></li>
-                    </ul>
-                    </div>
-                    <div class="btn-group" dropdown>
-                            <button id="button-basic" dropdownToggle type="button" class="btn btn-secondary dropdown-toggle bg-success"
-                                    aria-controls="dropdown-basic">
-                              Colonia <span class="caret"></span>
-                            </button>
-                            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-                                role="menu" aria-labelledby="button-basic">
-                              <li role="menuitem"><a class="dropdown-item" >Lomas de Chapultepec</a></li>
-                              <li role="menuitem"><a class="dropdown-item" >Lomas de Reforma</a></li>
-                              <li role="menuitem"><a class="dropdown-item" >Florida</a></li>
-                            </ul>
-                            </div>
-                    <br>
-                    <br>
+                <select style="background-color: #5cb85c; color: white" [(ngModel)]="selectedOption" name="first" class="form-control-sm">
+                    <option value="" disabled selected>{{'AdminReportesComponent.fecha' | translate }}</option>
+                    <option *ngFor="let o of options">
+                        {{o.name}}
+                    </option>
+                </select>
+                <select style="background-color: #5cb85c; color: white" [(ngModel)]="selectedOption2" name="second" class="form-control-sm ml-3">
+                    <option value="" disabled selected>Delegación</option>
+                    <option *ngFor="let o of options2">
+                        {{o.name}}
+                    </option>
+                </select>
+                <select style="background-color: #5cb85c; color: white" [(ngModel)]="selectedOption3" name="third" class="form-control-sm ml-3">
+                    <option value="" disabled selected>Colonia</option>
+                    <option *ngFor="let o of options3">
+                        {{o.name}}
+                    </option>
+                </select>
+                <button class="btn btn-primary ml-5" (click)="print()">{{'AdminPrincipalComponent.buscar' | translate }}</button>
+                <br>
+                <br>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
