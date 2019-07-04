@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Reporte } from '../../clases/reporte';
 import { FormGroup, FormControl } from '@angular/forms';
+import {Router, ActivatedRoute} from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
+import { ReporteService } from "../../services/gen-reporte/reporte.service";
 
 @Component({
   selector: 'app-gen-rep-form',
@@ -22,17 +24,19 @@ export class GenRepFormComponent implements OnInit {
 
   reporte:Reporte;
   delegaciones = ["Alvaro Obregón", "Cuajimalpa"];
-  colonias = ["Colonia A", "Colonia B"]
+  colonias = ["Del Valle", "Santa Fe"]
   public activeLang = 'es';
   
   
-  constructor(private toastrService:ToastrService, private translate:TranslateService) {
+  constructor(private toastrService:ToastrService, private translate:TranslateService, private router: Router, public reporteService:ReporteService) {
     this.reporte = new Reporte();
     this.translate.setDefaultLang(this.activeLang);
    }
 
   ngOnInit() {
   }
+
+  get aJson() { return JSON.stringify(this.reporte); }
   
   btnClick() {
     
@@ -43,6 +47,9 @@ export class GenRepFormComponent implements OnInit {
     var delegacion_str:string = <string> this.reporte.delegacion;
     var colonia_str:string = <string> this.reporte.colonia;
     var comentario_str:string = <string> this.reporte.comentario;
+    this.reporte.estado = "reportado";
+    this.reporte.id = Math.floor(Math.random() * 1000) + 1;
+    this.reporte.tipo = "luz";
     
     try {
       this.form.setValue({
@@ -58,7 +65,10 @@ export class GenRepFormComponent implements OnInit {
       return;
     }
     if (fecha_str.length != 0 && curp_str.length != 0 && calle_str.length != 0 && numero_str.length != 0 && delegacion_str.length != 0 && colonia_str.length != 0 && comentario_str.length != 0)
+    {
       this.toastrService.success("¡Reporte Generado!", "Estado de reporte:");
+      this.reporteService.addReporte(this.reporte);
+    }
     
     else
       this.toastrService.error("Aun necesitas llenar ciertos campos");
