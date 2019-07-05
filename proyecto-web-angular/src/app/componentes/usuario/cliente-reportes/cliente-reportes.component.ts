@@ -34,9 +34,10 @@ export class ClienteReportesComponent implements OnInit {
     { name: "Cuajimalpa", value: 3 }
   ]
   options3 = [
-    { name: "Lomas de Chapultepec", value: 1 },
-    { name: "Lomas de Reforma", value: 2 },
-    { name: "Florida", value: 3 }
+    { name: "Del Valle", value: 1 },
+    { name: "Santa Fe", value: 2 },
+    { name: "Florida", value: 3 },
+    { name: "Contadero", value: 4}
   ]
 
   print() {

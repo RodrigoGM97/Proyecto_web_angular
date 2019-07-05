@@ -30,11 +30,10 @@ export class OrgPrincipalComponent implements OnInit {
     { name: "Cuajimalpa", value: 3 }
   ]
   options3 = [
-    { name: "Lomas de Chapultepec", value: 1 },
-    { name: "Lomas de Reforma", value: 2 },
-    { name: "Florida", value: 3 },
-    { name: "Santa Fe", value: 4},
-    { name: "Del Valle", value: 5}
+    { name: "Contadero", value: 1 },
+    { name: "Florida", value: 2 },
+    { name: "Santa Fe", value: 3},
+    { name: "Del Valle", value: 4}
   ]
 
   print() {

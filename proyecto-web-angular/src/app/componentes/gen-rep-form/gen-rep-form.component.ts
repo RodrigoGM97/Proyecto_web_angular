@@ -23,8 +23,8 @@ export class GenRepFormComponent implements OnInit {
   });
 
   reporte:Reporte;
-  delegaciones = ["Alvaro Obregón", "Cuajimalpa"];
-  colonias = ["Del Valle", "Santa Fe"]
+  delegaciones = ["Álvaro Obregón", "Cuajimalpa", "Benito Juárez"];
+  colonias = ["Del Valle", "Santa Fe", "Contadero", "Florida"]
   public activeLang = 'es';
   
   
@@ -68,6 +68,8 @@ export class GenRepFormComponent implements OnInit {
     {
       this.toastrService.success("¡Reporte Generado!", "Estado de reporte:");
       this.reporteService.addReporte(this.reporte).subscribe();
+
+      (<HTMLFormElement>document.getElementById("generate-reporte-form")).reset();
     }
     
     else
