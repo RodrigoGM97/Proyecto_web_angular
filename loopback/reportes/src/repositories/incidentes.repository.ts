@@ -38,8 +38,4 @@ export class IncidentesRepository extends DefaultCrudRepository<
   public getIncidentesUser(delegacion:string, colonia:string, fecha:string, curp:string) {
     return this.find({where: {delegacion:delegacion, colonia:colonia, fecha:fecha, curp:curp}});
   }
-
-  public createIncidente( nuevoRegistro: Object) {
-    return this.create(nuevoRegistro);
-  }
 }

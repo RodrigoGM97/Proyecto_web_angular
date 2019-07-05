@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CrudIncidentesReportadosService } from "../../../../services/incidentes-reportados/crud-incidentes-reportados.service";
-
+import { IncidentesReportadosService } from "../../../../services/incidentes-reportados/incidentes-reportados.service";
+import { Reporte } from "../../../../clases/reporte"
 
 @Component({
   selector: '[app-incidente-row]', //con corchetes se indica que es un componente anidado
@@ -11,12 +11,12 @@ export class IncidenteRowComponent implements OnInit {
 
   @Input() incidente;
 
-  constructor(private crudIncidentesReportadosService:CrudIncidentesReportadosService) { }
+  constructor(private IncidentesReportadosService:IncidentesReportadosService) { }
 
   ngOnInit() {
   }
 
-  incidenteCompletado() {
+  incidenteCompletado(id:number) {
     var incidenteActualizado = {
       id:this.incidente.id,
       comentario:this.incidente.comentario,
@@ -26,16 +26,42 @@ export class IncidenteRowComponent implements OnInit {
       delegacion: this.incidente.delegacion,
       colonia: this.incidente.colonia,
       fecha: this.incidente.fecha,
-      ine: this.incidente.ine
+      curp: this.incidente.curp,
+      tipo_reporte: this.incidente.tipo_reporte
     }
 
-    this.crudIncidentesReportadosService.updateIncidente(incidenteActualizado);
+    /*Reporte incidenteActualizado(
+      this.incidente.id, 
+      this.incidente.comentario, 
+      "completado",
+      this.incidente.calle,
+      this.incidente.numero,
+      this.incidente.delegacion,
+      this.incidente.colonia,
+      this.incidente.fecha,
+      this.incidente.ine);*/
+
+    this.IncidentesReportadosService.updateIncidente(this.incidente.id, incidenteActualizado).subscribe();
     this.incidente.estado = "completado";
     console.log("Se marco incidente '" + this.incidente.comentario + "' como completado");
     console.log("Incidente: " + this.incidente.id + " " + this.incidente.comentario + " " + this.incidente.estado);
   }
 
-  incidenteRechazado() {
+  incidenteRechazado(id:number) {
+    var incidenteActualizado = {
+      id:this.incidente.id,
+      comentario:this.incidente.comentario,
+      estado:"rechazado",
+      calle: this.incidente.calle,
+      numero: this.incidente.numero,
+      delegacion: this.incidente.delegacion,
+      colonia: this.incidente.colonia,
+      fecha: this.incidente.fecha,
+      curp: this.incidente.curp,
+      tipo_reporte: this.incidente.tipo_reporte
+    }
+
+    this.IncidentesReportadosService.updateIncidente(this.incidente.id, incidenteActualizado).subscribe();
     this.incidente.estado = "rechazado";
     console.log("Se marco incidente '" + this.incidente.comentario + "' como rechazado");
   }

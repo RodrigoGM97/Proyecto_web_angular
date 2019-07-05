@@ -12,7 +12,7 @@ export class Reporte {
         public colonia?:string,
         public comentario?:string,
         public estado?:string,
-        public tipo?:string
+        public tipo_reporte?:string
     )
     {
         

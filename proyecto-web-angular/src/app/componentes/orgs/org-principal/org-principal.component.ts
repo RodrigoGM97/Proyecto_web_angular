@@ -33,7 +33,8 @@ export class OrgPrincipalComponent implements OnInit {
     { name: "Lomas de Chapultepec", value: 1 },
     { name: "Lomas de Reforma", value: 2 },
     { name: "Florida", value: 3 },
-    { name: "Santa Fe", value: 4}
+    { name: "Santa Fe", value: 4},
+    { name: "Del Valle", value: 5}
   ]
 
   print() {

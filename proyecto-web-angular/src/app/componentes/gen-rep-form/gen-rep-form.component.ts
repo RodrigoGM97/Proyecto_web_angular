@@ -49,7 +49,7 @@ export class GenRepFormComponent implements OnInit {
     var comentario_str:string = <string> this.reporte.comentario;
     this.reporte.estado = "reportado";
     this.reporte.id = Math.floor(Math.random() * 1000) + 1;
-    this.reporte.tipo = "luz";
+    this.reporte.tipo_reporte = "luz";
     
     try {
       this.form.setValue({
@@ -67,6 +67,18 @@ export class GenRepFormComponent implements OnInit {
     if (fecha_str.length != 0 && curp_str.length != 0 && calle_str.length != 0 && numero_str.length != 0 && delegacion_str.length != 0 && colonia_str.length != 0 && comentario_str.length != 0)
     {
       this.toastrService.success("¡Reporte Generado!", "Estado de reporte:");
+
+      /*var nuevoReporte = {
+        id:this.reporte.id,
+        fecha: this.reporte.fecha,
+        curp: this.reporte.curp,
+        calle: this.reporte.calle,
+        numero: this.reporte.numero,
+        delegacion: this.reporte.delegacion,
+        colonia: this.reporte.colonia,
+        comentario: this.reporte.
+      }*/
+
       this.reporteService.addReporte(this.reporte).subscribe(resp => console.log(resp));
     }
     
