@@ -2,6 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
 import { TranslateService } from '@ngx-translate/core';
+import { GrafUsuarioPrincService } from "../../../services/grafica/graf-usuario-princ.service";
+import { ActivatedRoute } from '@angular/router';
+import { asLiteral } from '@angular/compiler/src/render3/view/util';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -19,8 +23,16 @@ export class ClientePrincipalComponent implements OnInit {
   toggleCollapse() {
     this.show = !this.show
   }
+
+  public pieChartLabels = ['Agua', 'Luz'];
+  public pieChartData = [1000, 1000];
+  public pieChartType = 'pie';
+  public count;
+  count_agua:number = 0;
+  count_luz:number = 0;
   
-  public lineChartData: ChartDataSets[] = [
+  
+  /*public lineChartData: ChartDataSets[] = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Reportes de Agua' },
     { data: [28, 48, 40, 19, 86, 27, 90], label: 'Reportes de Luz' }
   ];
@@ -87,9 +99,9 @@ export class ClientePrincipalComponent implements OnInit {
   public lineChartType = 'line';
   
 
-  @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
+  @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;*/
 
-  constructor(private translate:TranslateService) {
+  constructor(public grafUsuarioPrincService: GrafUsuarioPrincService, private translate:TranslateService, private route:ActivatedRoute) {
     this.translate.setDefaultLang('es');
     if (navigator)
     {
@@ -98,12 +110,21 @@ export class ClientePrincipalComponent implements OnInit {
         this.lat = +pos.coords.latitude;
       });
     }
+
+    this.getGrafData("luz");
+    //this.count_luz = this.count;
+    this.getGrafData("agua");
+    //this.count_agua = this.count;
+    
+    console.log("c: "+this.count_agua);
+    this.pieChartData = [this.count_agua, this.count_agua];
    }
 
   ngOnInit() {
+    
   }
 
-  public randomize(): void {
+  /*public randomize(): void {
     for (let i = 0; i < this.lineChartData.length; i++) {
       for (let j = 1; j < this.lineChartData[i].data.length; j++) {
         this.lineChartData[i].data[j] = this.generateNumber(i);
@@ -147,10 +168,39 @@ export class ClientePrincipalComponent implements OnInit {
   public changeLabel() {
     this.lineChartLabels[2] = ['1st Line', '2nd Line'];
     // this.chart.update();
-  }
+  }*/
 
   public  cambiarLenguaje(lang){
     this.activeLang = lang;
     this.translate.use(lang);
+  }
+
+  getGrafData(tipo_reporte:string)
+  {
+    this.count = [];
+    this.grafUsuarioPrincService.getGrafData(tipo_reporte).subscribe((data:{}) => {
+      console.log(data);
+      this.count = Object.keys(data).length;
+      console.log("count: "+typeof(this.count));
+      console.log("count: "+this.count);
+      if (tipo_reporte == "luz")
+      {
+        this.count_luz= this.count;
+        console.log(tipo_reporte+" "+typeof(this.count_luz));
+        console.log(tipo_reporte+" "+this.count_luz);
+      }
+      else if (tipo_reporte == "agua")
+      {
+        this.count_agua = this.count;
+        console.log(tipo_reporte+" "+typeof(this.count_agua));
+        console.log(tipo_reporte+" "+this.count_agua);
+      }
+      
+      
+      console.log(tipo_reporte+" "+typeof(this.count_agua));
+      console.log(tipo_reporte+" "+this.count_agua);
+    })
+    console.log("asignacion_funcion2: "+typeof(this.count_luz));
+    console.log("asignacion_funcion2: "+this.count_luz);
   }
 }
