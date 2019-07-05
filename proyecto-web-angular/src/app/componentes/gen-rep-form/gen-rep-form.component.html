@@ -28,7 +28,7 @@
     </div>
     <div class="form-group pl-2 col-sm-6">
       <h3>{{'GenRepForm.Numero' | translate}}</h3>
-      <input type="input" class="form-control" id="numero" placeholder="#" [(ngModel)]="reporte.numero" name="numero" #numero="ngModel" required="required">
+      <input type="number" class="form-control" id="numero" placeholder="#" [(ngModel)]="reporte.numero" name="numero" #numero="ngModel" required="required">
       <div [hidden]="numero.valid || numero.pristine" class="alert alert-danger">
         <div>{{'GenRepForm.NumeroVal' | translate}}</div>
       </div>

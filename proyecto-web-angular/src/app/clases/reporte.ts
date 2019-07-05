@@ -7,7 +7,7 @@ export class Reporte {
         public fecha?:string,
         public curp?:string,
         public calle?:string,
-        public numero?:string,
+        public numero?:number,
         public delegacion?:string,
         public colonia?:string,
         public comentario?:string,
